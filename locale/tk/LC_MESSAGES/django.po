@@ -1,0 +1,645 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-05 13:42+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\ecomprj\settings.py:147
+msgid "English"
+msgstr ""
+
+#: .\ecomprj\settings.py:148
+msgid "Russian"
+msgstr ""
+
+#: .\ecomprj\settings.py:149
+msgid "Turkmen"
+msgstr ""
+
+#: .\templates\core\cart.html:9 .\templates\core\category-product-list.html:13
+#: .\templates\core\checkout.html:9 .\templates\core\contact.html:9
+#: .\templates\core\dashboard.html:9 .\templates\core\order-detail.html:9
+#: .\templates\core\product-detail.html:16
+#: .\templates\core\product-list.html:44 .\templates\core\search.html:18
+#: .\templates\core\tag.html:13 .\templates\core\vendor-detail.html:9
+#: .\templates\core\vendor-list.html:10 .\templates\core\wishlist.html:10
+#: .\templates\partials\base.html:284 .\templates\partials\base.html:467
+msgid "Home"
+msgstr ""
+
+#: .\templates\core\cart.html:10 .\templates\partials\base.html:211
+msgid "Cart"
+msgstr ""
+
+#: .\templates\core\cart.html:17
+msgid "Your Cart"
+msgstr ""
+
+#: .\templates\core\cart.html:19 .\templates\core\checkout.html:19
+#: .\templates\core\wishlist.html:20
+msgid "There are"
+msgstr ""
+
+#: .\templates\core\cart.html:19 .\templates\core\checkout.html:19
+msgid "products in your cart"
+msgstr ""
+
+#: .\templates\core\cart.html:34 .\templates\core\wishlist.html:30
+msgid "Product"
+msgstr ""
+
+#: .\templates\core\cart.html:35 .\templates\core\order-detail.html:63
+#: .\templates\core\payment-completed.html:55
+msgid "Title"
+msgstr ""
+
+#: .\templates\core\cart.html:36
+msgid "Unit Price"
+msgstr ""
+
+#: .\templates\core\cart.html:37 .\templates\core\payment-completed.html:57
+msgid "Quantity"
+msgstr ""
+
+#: .\templates\core\cart.html:38 .\templates\core\cart.html:371
+#: .\templates\core\checkout.html:59
+msgid "Subtotal"
+msgstr ""
+
+#: .\templates\core\cart.html:39
+msgid "Refresh"
+msgstr ""
+
+#: .\templates\core\cart.html:40 .\templates\core\wishlist.html:34
+msgid "Remove"
+msgstr ""
+
+#: .\templates\core\cart.html:384
+msgid "Shipping"
+msgstr ""
+
+#: .\templates\core\cart.html:387
+msgid "Free"
+msgstr ""
+
+#: .\templates\core\cart.html:392 .\templates\core\dashboard.html:118
+#: .\templates\core\order-detail.html:66
+msgid "Total"
+msgstr ""
+
+#: .\templates\core\cart.html:402
+msgid "Proceed To CheckOut"
+msgstr ""
+
+#: .\templates\core\category-list.html:12
+#: .\templates\core\category-list.html:49
+msgid "Categories"
+msgstr ""
+
+#: .\templates\core\category-list.html:15
+#: .\templates\core\category-list.html:151 .\templates\core\index.html:231
+#: .\templates\core\vendor-detail.html:372 .\templates\partials\base.html:289
+#: .\templates\partials\base.html:470
+msgid "Category"
+msgstr ""
+
+#: .\templates\core\category-product-list.html:27
+#: .\templates\core\search.html:32 .\templates\core\tag.html:27
+#: .\templates\core\vendor-detail.html:80
+msgid "We found"
+msgstr ""
+
+#: .\templates\core\category-product-list.html:27
+msgid "items for you"
+msgstr ""
+
+#: .\templates\core\checkout.html:10 .\templates\core\checkout.html:17
+#: .\templates\partials\base.html:218 .\templates\partials\base.html:419
+msgid "Checkout"
+msgstr ""
+
+#: .\templates\core\checkout.html:35
+msgid "Billing Details"
+msgstr ""
+
+#: .\templates\core\checkout.html:63
+msgid "Go back to Cart"
+msgstr ""
+
+#: .\templates\core\checkout.html:118
+msgid "Make Payment"
+msgstr ""
+
+#: .\templates\core\contact.html:10 .\templates\partials\base.html:380
+msgid "Contact"
+msgstr ""
+
+#: .\templates\core\contact.html:87
+msgid "Contact form"
+msgstr ""
+
+#: .\templates\core\contact.html:88
+msgid "Drop Us a Line"
+msgstr ""
+
+#: .\templates\core\contact.html:89
+msgid "Your email address will not be published. Required fields are marked *"
+msgstr ""
+
+#: .\templates\core\contact.html:118
+msgid "Send message"
+msgstr ""
+
+#: .\templates\core\dashboard.html:23
+msgid "Profile"
+msgstr ""
+
+#: .\templates\core\dashboard.html:26 .\templates\core\order-detail.html:23
+#: .\templates\core\payment-completed.html:24
+msgid "Dashboard"
+msgstr ""
+
+#: .\templates\core\dashboard.html:29
+msgid "Orders"
+msgstr ""
+
+#: .\templates\core\dashboard.html:35
+msgid "My Address"
+msgstr ""
+
+#: .\templates\core\dashboard.html:38
+msgid "Account details"
+msgstr ""
+
+#: .\templates\core\dashboard.html:41 .\templates\core\order-detail.html:30
+msgid "Logout"
+msgstr ""
+
+#: .\templates\core\dashboard.html:51
+msgid "My Profile"
+msgstr ""
+
+#: .\templates\core\dashboard.html:69
+msgid "Verified"
+msgstr ""
+
+#: .\templates\core\dashboard.html:73
+msgid "Not verified"
+msgstr ""
+
+#: .\templates\core\dashboard.html:77
+msgid "Edit Profile"
+msgstr ""
+
+#: .\templates\core\dashboard.html:87
+msgid "Hello"
+msgstr ""
+
+#: .\templates\core\dashboard.html:107 .\templates\core\order-detail.html:54
+msgid "Your Orders"
+msgstr ""
+
+#: .\templates\core\dashboard.html:114
+msgid "Order"
+msgstr ""
+
+#: .\templates\core\dashboard.html:115
+msgid "Date"
+msgstr ""
+
+#: .\templates\core\dashboard.html:116
+msgid "Status"
+msgstr ""
+
+#: .\templates\core\dashboard.html:117
+msgid "Paid Status"
+msgstr ""
+
+#: .\templates\core\dashboard.html:119
+msgid "Actions"
+msgstr ""
+
+#: .\templates\core\dashboard.html:136
+msgid "View"
+msgstr ""
+
+#: .\templates\core\dashboard.html:175
+msgid "Add Address"
+msgstr ""
+
+#: .\templates\core\dashboard.html:185
+msgid "Save Address"
+msgstr ""
+
+#: .\templates\core\dashboard.html:197 .\templates\core\product-detail.html:263
+#: .\templates\core\product-detail.html:541
+#: .\templates\core\vendor-list.html:112 .\templates\partials\base.html:662
+msgid "Address"
+msgstr ""
+
+#: .\templates\core\dashboard.html:232 .\templates\core\order-detail.html:153
+msgid "Account Details"
+msgstr ""
+
+#: .\templates\core\dashboard.html:235
+msgid "Log in instead"
+msgstr ""
+
+#: .\templates\core\dashboard.html:239 .\templates\core\order-detail.html:160
+msgid "First Name"
+msgstr ""
+
+#: .\templates\core\dashboard.html:243 .\templates\core\order-detail.html:164
+msgid "Last Name"
+msgstr ""
+
+#: .\templates\core\dashboard.html:247 .\templates\core\order-detail.html:168
+msgid "Display Name"
+msgstr ""
+
+#: .\templates\core\dashboard.html:251 .\templates\core\order-detail.html:172
+msgid "Email Address"
+msgstr ""
+
+#: .\templates\core\dashboard.html:255 .\templates\core\order-detail.html:176
+msgid "Current Password"
+msgstr ""
+
+#: .\templates\core\dashboard.html:259 .\templates\core\order-detail.html:180
+msgid "New Password"
+msgstr ""
+
+#: .\templates\core\dashboard.html:263 .\templates\core\order-detail.html:184
+msgid "Confirm Password"
+msgstr ""
+
+#: .\templates\core\index.html:29
+msgid "All Products"
+msgstr ""
+
+#: .\templates\core\index.html:135 .\templates\core\search.html:154
+msgid "Deals Of The Day"
+msgstr ""
+
+#: .\templates\core\index.html:137
+msgid "All Deals"
+msgstr ""
+
+#: .\templates\core\index.html:282
+msgid "New products"
+msgstr ""
+
+#: .\templates\core\index.html:317
+msgid "Shop by Vendors"
+msgstr ""
+
+#: .\templates\core\index.html:319
+msgid "All Vendors"
+msgstr ""
+
+#: .\templates\core\index.html:346
+msgid "Top Selling"
+msgstr ""
+
+#: .\templates\core\index.html:376
+msgid "Trending Products"
+msgstr ""
+
+#: .\templates\core\index.html:406
+msgid "Recently added"
+msgstr ""
+
+#: .\templates\core\index.html:436
+msgid "Top Rated"
+msgstr ""
+
+#: .\templates\core\order-detail.html:10 .\templates\partials\base.html:230
+msgid "My Account"
+msgstr ""
+
+#: .\templates\core\order-detail.html:61
+msgid "Order INV"
+msgstr ""
+
+#: .\templates\core\order-detail.html:62
+msgid "Image"
+msgstr ""
+
+#: .\templates\core\order-detail.html:64
+#: .\templates\core\payment-completed.html:56 .\templates\core\wishlist.html:31
+msgid "Price"
+msgstr ""
+
+#: .\templates\core\order-detail.html:65
+msgid "Qty"
+msgstr ""
+
+#: .\templates\core\order-detail.html:93
+msgid "Orders tracking"
+msgstr ""
+
+#: .\templates\core\order-detail.html:101
+msgid "Order ID"
+msgstr ""
+
+#: .\templates\core\order-detail.html:105
+msgid "Billing email"
+msgstr ""
+
+#: .\templates\core\order-detail.html:108
+msgid "Track"
+msgstr ""
+
+#: .\templates\core\order-detail.html:156
+msgid "Already have an account?"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:58
+msgid "Amount"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:76
+msgid "SubTotal"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:84
+msgid "Grand Total"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:94
+msgid "Invoice for"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:96
+msgid "Invoice To"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:100
+msgid "Total Amount"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:102
+msgid "Taxes Included"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:107
+msgid "Thanks for our shopping at"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:112
+msgid "Print"
+msgstr ""
+
+#: .\templates\core\payment-completed.html:113
+msgid "Download"
+msgstr ""
+
+#: .\templates\core\product-detail.html:17
+#: .\templates\core\product-list.html:45 .\templates\partials\base.html:301
+msgid "Shop"
+msgstr ""
+
+#: .\templates\core\product-detail.html:258
+msgid "reviews"
+msgstr ""
+
+#: .\templates\core\product-detail.html:264
+#: .\templates\core\product-detail.html:542
+msgid "Contact Seller"
+msgstr ""
+
+#: .\templates\core\product-detail.html:268
+#: .\templates\core\product-detail.html:547
+msgid "Rating"
+msgstr ""
+
+#: .\templates\core\product-detail.html:272
+#: .\templates\core\product-detail.html:551
+msgid "Ship on time"
+msgstr ""
+
+#: .\templates\core\product-detail.html:276
+#: .\templates\core\product-detail.html:555
+msgid "Chat response"
+msgstr ""
+
+#: .\templates\core\product-detail.html:287
+msgid "Customer questions & answers"
+msgstr ""
+
+#: .\templates\core\product-detail.html:316
+msgid "Customer reviews"
+msgstr ""
+
+#: .\templates\core\product-detail.html:408
+msgid "Related products"
+msgstr ""
+
+#: .\templates\core\product-detail.html:491
+msgid "Delivery"
+msgstr ""
+
+#: .\templates\core\product-detail.html:499
+msgid "Verified Address"
+msgstr ""
+
+#: .\templates\core\product-detail.html:501
+msgid "Unverified Address"
+msgstr ""
+
+#: .\templates\core\product-detail.html:504
+msgid "Change"
+msgstr ""
+
+#: .\templates\core\product-detail.html:508
+msgid "Return & Warranty"
+msgstr ""
+
+#: .\templates\core\product-detail.html:512
+msgid "Authentic"
+msgstr ""
+
+#: .\templates\core\product-detail.html:516
+msgid " Days Return"
+msgstr ""
+
+#: .\templates\core\product-detail.html:520
+msgid "Months Warranty"
+msgstr ""
+
+#: .\templates\core\product-detail.html:525
+msgid "Vendor"
+msgstr ""
+
+#: .\templates\core\product-detail.html:562
+msgid "Register now"
+msgstr ""
+
+#: .\templates\core\product-list.html:62
+msgid "By Categories"
+msgstr ""
+
+#: .\templates\core\product-list.html:78
+msgid "By Vendors"
+msgstr ""
+
+#: .\templates\core\product-list.html:93
+msgid "Popular Tags"
+msgstr ""
+
+#: .\templates\core\product-list.html:121
+msgid "Filter"
+msgstr ""
+
+#: .\templates\core\search.html:14
+msgid "No Searched Item"
+msgstr ""
+
+#: .\templates\core\search.html:32 .\templates\core\tag.html:27
+msgid "item for you!"
+msgstr ""
+
+#: .\templates\core\tag.html:103
+msgid "By"
+msgstr ""
+
+#: .\templates\core\vendor-detail.html:22 .\templates\core\vendor-list.html:101
+msgid "Since"
+msgstr ""
+
+#: .\templates\core\vendor-detail.html:47
+msgid "Follow Us"
+msgstr ""
+
+#: .\templates\core\vendor-detail.html:80
+msgid "items for you!"
+msgstr ""
+
+#: .\templates\core\vendor-list.html:11 .\templates\core\vendor-list.html:18
+msgid "Vendors List"
+msgstr ""
+
+#: .\templates\core\vendor-list.html:95
+msgid "Products"
+msgstr ""
+
+#: .\templates\core\vendor-list.html:118
+msgid "Visit Store"
+msgstr ""
+
+#: .\templates\core\wishlist.html:11 .\templates\partials\base.html:204
+msgid "Wishlist"
+msgstr ""
+
+#: .\templates\core\wishlist.html:19
+msgid "Your Wishlist"
+msgstr ""
+
+#: .\templates\core\wishlist.html:20
+msgid "products in this list"
+msgstr ""
+
+#: .\templates\core\wishlist.html:32
+msgid "Stock Status"
+msgstr ""
+
+#: .\templates\core\wishlist.html:33
+msgid "Action"
+msgstr ""
+
+#: .\templates\core\wishlist.html:56
+msgid "In Stock"
+msgstr ""
+
+#: .\templates\core\wishlist.html:56
+msgid "Out of Stock"
+msgstr ""
+
+#: .\templates\core\wishlist.html:67
+msgid "Add to cart"
+msgstr ""
+
+#: .\templates\core\wishlist.html:75
+msgid "Nothing in wishlist yet..."
+msgstr ""
+
+#: .\templates\partials\base.html:167
+msgid "Search for items..."
+msgstr ""
+
+#: .\templates\partials\base.html:217 .\templates\partials\base.html:418
+msgid "View cart"
+msgstr ""
+
+#: .\templates\partials\base.html:227
+msgid "Account"
+msgstr ""
+
+#: .\templates\partials\base.html:231
+msgid "Admin Dashboard"
+msgstr ""
+
+#: .\templates\partials\base.html:234
+msgid "My Wishlist"
+msgstr ""
+
+#: .\templates\partials\base.html:235
+msgid "Setting"
+msgstr ""
+
+#: .\templates\partials\base.html:237
+msgid "Sign out"
+msgstr ""
+
+#: .\templates\partials\base.html:259 .\templates\partials\base.html:295
+msgid "All Categories"
+msgstr ""
+
+#: .\templates\partials\base.html:282
+msgid "Акции"
+msgstr ""
+
+#: .\templates\partials\base.html:305 .\templates\partials\base.html:478
+msgid "Vendors"
+msgstr ""
+
+#: .\templates\partials\base.html:388
+msgid "Support Center"
+msgstr ""
+
+#: .\templates\partials\base.html:514
+msgid "Language"
+msgstr ""
+
+#: .\templates\partials\base.html:530
+msgid "Log In / Sign Up"
+msgstr ""
+
+#: .\templates\partials\base.html:544 .\templates\partials\base.html:655
+msgid "All rights reserved"
+msgstr ""
+
+#: .\templates\partials\base.html:668
+msgid "Call Us"
+msgstr ""
+
+#: .\templates\partials\base.html:683
+msgid "Hours"
+msgstr ""
+
+#~ msgid "poisk"
+#~ msgstr "gozle"
