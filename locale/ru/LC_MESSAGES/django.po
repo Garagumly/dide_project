@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-05 13:42+0500\n"
+"POT-Creation-Date: 2023-11-07 20:03+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -446,6 +446,23 @@ msgstr "Скачать"
 msgid "Shop"
 msgstr "Магазин"
 
+#: .\templates\core\product-detail.html:137
+msgid "Description"
+msgstr "Описание"
+
+#: .\templates\core\product-detail.html:143
+#: .\templates\core\product-detail.html:525
+#, fuzzy
+#| msgid "Vendors"
+msgid "Vendor"
+msgstr "Продавцы"
+
+#: .\templates\core\product-detail.html:146
+#, fuzzy
+#| msgid "reviews"
+msgid "Reviews"
+msgstr "обзоры"
+
 #: .\templates\core\product-detail.html:258
 msgid "reviews"
 msgstr "обзоры"
@@ -481,6 +498,10 @@ msgstr "Вопросы и ответы клиентов"
 #: .\templates\core\product-detail.html:316
 msgid "Customer reviews"
 msgstr "Отзывы клиентов"
+
+#: .\templates\core\product-detail.html:325
+msgid "out of"
+msgstr ""
 
 #: .\templates\core\product-detail.html:408
 #, fuzzy
@@ -521,12 +542,6 @@ msgstr "Дни Возврата"
 #: .\templates\core\product-detail.html:520
 msgid "Months Warranty"
 msgstr "Месяцы гарантии"
-
-#: .\templates\core\product-detail.html:525
-#, fuzzy
-#| msgid "Vendors"
-msgid "Vendor"
-msgstr "Продавцы"
 
 #: .\templates\core\product-detail.html:562
 msgid "Register now"
@@ -672,9 +687,15 @@ msgstr "Продавцы"
 msgid "Support Center"
 msgstr "Поддержка"
 
+#: .\templates\partials\base.html:458
+#, fuzzy
+#| msgid "Search for items..."
+msgid "Search for items…"
+msgstr "Поиск товаров..."
+
 #: .\templates\partials\base.html:514
 msgid "Language"
-msgstr "Язык"
+msgstr "Языки"
 
 #: .\templates\partials\base.html:530
 msgid "Log In / Sign Up"

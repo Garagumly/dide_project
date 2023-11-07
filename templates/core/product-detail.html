@@ -134,16 +134,16 @@
                                     <div class="tab-style3">
                                         <ul class="nav nav-tabs text-uppercase">
                                             <li class="nav-item">
-                                                <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">Description</a>
+                                                <a class="nav-link active" id="Description-tab" data-bs-toggle="tab" href="#Description">{% trans 'Description' %}</a>
                                             </li>
                                             <!-- <li class="nav-item">
                                                 <a class="nav-link" id="Additional-info-tab" data-bs-toggle="tab" href="#Additional-info">Additional info</a>
                                             </li> -->
                                             <li class="nav-item">
-                                                <a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info">Vendor</a>
+                                                <a class="nav-link" id="Vendor-info-tab" data-bs-toggle="tab" href="#Vendor-info">{% trans 'Vendor' %}</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">Reviews ({{ reviews.count }})</a>
+                                                <a class="nav-link" id="Reviews-tab" data-bs-toggle="tab" href="#Reviews">{% trans 'Reviews' %} ({{ reviews.count }})</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content shop_info_tab entry-main-content">
@@ -322,7 +322,7 @@
                                                                     <p">★☆★☆★☆</p>
                                                                 </div>
                                                                 <br> -->
-                                                                <h6>{{ average_rating.rating|floatformat:1 }} {% trans 'out of'} 5.0</h6>
+                                                                <h6>{{ average_rating.rating|floatformat:1 }} {% trans 'out of' %} 5.0</h6>
                                                             </div>
                                                             <div class="progress">
                                                                 <span>5 star</span>

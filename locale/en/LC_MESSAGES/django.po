@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-05 13:42+0500\n"
+"POT-Creation-Date: 2023-11-07 20:03+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,6 +413,19 @@ msgstr ""
 msgid "Shop"
 msgstr ""
 
+#: .\templates\core\product-detail.html:137
+msgid "Description"
+msgstr ""
+
+#: .\templates\core\product-detail.html:143
+#: .\templates\core\product-detail.html:525
+msgid "Vendor"
+msgstr ""
+
+#: .\templates\core\product-detail.html:146
+msgid "Reviews"
+msgstr ""
+
 #: .\templates\core\product-detail.html:258
 msgid "reviews"
 msgstr ""
@@ -443,6 +456,10 @@ msgstr ""
 
 #: .\templates\core\product-detail.html:316
 msgid "Customer reviews"
+msgstr ""
+
+#: .\templates\core\product-detail.html:325
+msgid "out of"
 msgstr ""
 
 #: .\templates\core\product-detail.html:408
@@ -479,10 +496,6 @@ msgstr ""
 
 #: .\templates\core\product-detail.html:520
 msgid "Months Warranty"
-msgstr ""
-
-#: .\templates\core\product-detail.html:525
-msgid "Vendor"
 msgstr ""
 
 #: .\templates\core\product-detail.html:562
@@ -619,6 +632,10 @@ msgstr ""
 
 #: .\templates\partials\base.html:388
 msgid "Support Center"
+msgstr ""
+
+#: .\templates\partials\base.html:458
+msgid "Search for items…"
 msgstr ""
 
 #: .\templates\partials\base.html:514
