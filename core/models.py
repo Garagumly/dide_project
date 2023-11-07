@@ -111,8 +111,8 @@ class Vendor(models.Model):
     vid = ShortUUIDField(unique=True, length=10, max_length=20, prefix="ven", alphabet="abcdefgh12345")
 
     title = models.CharField(max_length=100, default="Nestify")
-    image = models.ImageField(upload_to=user_directory_path, default="vendor.jpg")
-    cover_image = models.ImageField(upload_to=user_directory_path, default="vendor.jpg")
+    image = models.ImageField(upload_to="product-images", default="vendor.jpg")
+    cover_image = models.ImageField(upload_to="product-images", default="vendor.jpg")
     # description = models.TextField(null=True, blank=True, default="I am am Amazing Vendor")
     description = RichTextUploadingField(null=True, blank=True, default="I am am Amazing Vendor")
 
@@ -145,7 +145,7 @@ class Product(models.Model):
     vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True, related_name="product")
 
     title = models.CharField(max_length=100, default="Fresh Pear")
-    image = models.ImageField(upload_to=user_directory_path, default="product.jpg")
+    image = models.ImageField(upload_to="product-images", default="product.jpg")
     # description = models.TextField(null=True, blank=True, default="This is the product")
     description = RichTextUploadingField(null=True, blank=True, default="This is the product")
 
