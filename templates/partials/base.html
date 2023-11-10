@@ -136,15 +136,15 @@
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
                                             <li><a href="{% url 'dashboard' %}"><i class="fi fi-rs-user mr-10"></i>{% trans 'My Account' %}</a></li>
-                                            <li><a href="{% url 'useradmin:dashboard' %}"><i class="fi fi-rs-user mr-10"></i>{% trans 'Admin Dashboard' %}</a></li>
+                                            <li><a href="{% url 'dashboard' %}"><i class="fi fi-rs-user mr-10"></i>{% trans 'Admin Dashboard' %}</a></li>
                                             <!-- <li><a href="page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a></li> -->
                                             <!-- <li><a href="page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a></li> -->
                                             <li><a href="{% url 'wishlist' %}"><i class="fi fi-rs-heart mr-10"></i>{% trans 'My Wishlist' %}</a></li>
                                             <li><a href="{% url 'dashboard' %}"><i class="fi fi-rs-settings-sliders mr-10"></i>{% trans 'Setting' %}</a></li>
                                             {% if request.user.is_authenticated %}
-                                            <li><a href="{% url 'userauths:sign-out' %}"><i class="fi fi-rs-sign-out mr-10"></i>{% trans 'Sign out' %}</a></li>
+                                            <li><a href="{% url 'sign-out' %}"><i class="fi fi-rs-sign-out mr-10"></i>{% trans 'Sign out' %}</a></li>
                                             {% else %}
-                                            <li><a href="{% url 'userauths:sign-in' %}"><i class="fi fi-rs-sign-in mr-10"></i>{ trans 'Sign In' %}</a></li>
+                                            <li><a href="{% url 'sign-in' %}"><i class="fi fi-rs-sign-in mr-10"></i>{% trans 'Sign In' %}</a></li>
                                             {% endif %}
                                         </ul>
                                     </div>
@@ -435,7 +435,7 @@
                         <a href="{% url 'contact' %}"><i class="fi-rs-marker"></i> {% for m in maininfo %}{{ m.address }}{% endfor %} </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="{% url 'userauths:sign-up' %}"><i class="fi-rs-user"></i>{% trans 'Log In / Sign Up' %} </a>
+                        <a href="{% url 'sign-up' %}"><i class="fi-rs-user"></i>{% trans 'Log In / Sign Up' %} </a>
                     </div>
                     <div class="single-mobile-header-info">
                         <a ><i class="fi-rs-headphones"></i> {% for m in maininfo %}{{ m.phone }} {% endfor %}</a>
@@ -608,7 +608,7 @@
         </section>
     </footer>
     <!-- Preloader Start -->
-    <div id="preloader-active">
+    <!-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center">
@@ -616,7 +616,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Vendor JS-->
     <script data-cfasync="false" src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
     <script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>

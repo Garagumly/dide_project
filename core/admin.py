@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Banner, Slider, MainInfo, CartOrderProducts, Product, Category, Vendor, CartOrder, ProductImages, ProductReview, wishlist_model, Address
+from core.models import Slider, MainInfo, CartOrderProducts, Product, Category, Vendor, CartOrder, ProductImages, ProductReview, wishlist_model, Address
 from modeltranslation.admin import TranslationAdmin
 
 
@@ -39,19 +39,19 @@ class VendorAdmin(TranslationAdmin):
 
 
 
-# @admin.register(CategoryModel)
-# class CategoryAdmin(TranslationAdmin):
-#     list_display = ['title', 'category_image']
+@admin.register(Category)
+class CategoryAdmin(TranslationAdmin):
+    list_display = ['title', 'category_image']
 
-#     class Media:
-#         js = (
-#             'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-#             'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-#             'modeltranslation/js/tabbed_translation_fields.js',
-#         )
-#         css = {
-#             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-#         }
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
 
 # class ProductAdmin(admin.ModelAdmin):
@@ -61,8 +61,8 @@ class VendorAdmin(TranslationAdmin):
 
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category_image']
+# class CategoryAdmin(admin.ModelAdmin):
+#     list_display = ['title', 'category_image']
 
 
 # class VendorAdmin(admin.ModelAdmin):
@@ -97,11 +97,9 @@ class MainInfoAdmin(admin.ModelAdmin):
 class SliderAdmin(admin.ModelAdmin):
     list_display = ['title', 'image']
 
-class BannerAdmin(admin.ModelAdmin):
-    list_display = ['banner_1', 'banner_2', 'banner_3', 'banner_4']
 
 # admin.site.register(Product, ProductAdmin)    
-admin.site.register(Category, CategoryAdmin)
+# admin.site.register(Category, CategoryAdmin)
 # admin.site.register(Vendor, VendorAdmin)
 admin.site.register(CartOrder, CartOrderAdmin)
 admin.site.register(CartOrderProducts, CartOrderProductsAdmin)
@@ -110,7 +108,6 @@ admin.site.register(wishlist_model, wishlistAdmin)
 admin.site.register(Address, AddressAdmin)
 admin.site.register(MainInfo, MainInfoAdmin)
 admin.site.register(Slider, SliderAdmin)
-admin.site.register(Banner, BannerAdmin)
 
 
 

@@ -49,7 +49,7 @@ def dashboard_add_product(request):
             new_form.user = request.user
             new_form.save()
             form.save_m2m()
-            return redirect("useradmin:dashboard-products")
+            return redirect("dashboard-products")
     else:
         form = AddProductForm()
     context = {
@@ -68,7 +68,7 @@ def dashboard_edit_product(request, pid):
             new_form = form.save(commit=False)
             new_form.save()
             form.save_m2m()
-            return redirect("useradmin:dashboard-products")
+            return redirect("dashboard-products")
     else:
         form = AddProductForm(instance=product)
     context = {
@@ -82,4 +82,4 @@ def dashboard_edit_product(request, pid):
 def dashboard_delete_product(request, pid):
     product = Product.objects.get(pid=pid)
     product.delete()
-    return redirect("useradmin:dashboard-products")
+    return redirect("dashboard-products")

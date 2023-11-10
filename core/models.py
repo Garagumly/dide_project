@@ -56,11 +56,6 @@ class Slider(models.Model):
     title = models.CharField(max_length=100, default="Slider")
     image = models.ImageField(upload_to="base-index", default="logo.jpg")
 
-class Banner(models.Model):
-    banner_1 = models.ImageField(upload_to="base-index", default="logo.jpg")
-    banner_2 = models.ImageField(upload_to="base-index", default="logo.jpg")
-    banner_3 = models.ImageField(upload_to="base-index", default="logo.jpg")
-    banner_4 = models.ImageField(upload_to="base-index", default="logo.jpg")
 
 class MainInfo(models.Model):
     name = models.CharField(max_length=100, default="Dide")
@@ -89,18 +84,17 @@ class MainInfo(models.Model):
 class Category(models.Model):
     cid = ShortUUIDField(unique=True, length=10, max_length=20, prefix="cat", alphabet="abcdefgh12345")
 
-    title = models.CharField(max_length=100, default="Food")
-    image = models.ImageField(upload_to="category", default="logo.jpg")
+    title = models.CharField(max_length=100, default="Parcel")
+    image = models.ImageField(upload_to="category_imgs", default="logo.jpg")
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Categorys"
 
     def category_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
 
     def __str__(self):
         return self.title
-
 
 
 class Tags(models.Model):
@@ -110,7 +104,7 @@ class Tags(models.Model):
 class Vendor(models.Model):
     vid = ShortUUIDField(unique=True, length=10, max_length=20, prefix="ven", alphabet="abcdefgh12345")
 
-    title = models.CharField(max_length=100, default="Nestify")
+    title = models.CharField(max_length=100, default="Dide")
     image = models.ImageField(upload_to="product-images", default="vendor.jpg")
     cover_image = models.ImageField(upload_to="product-images", default="vendor.jpg")
     # description = models.TextField(null=True, blank=True, default="I am am Amazing Vendor")

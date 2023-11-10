@@ -9,7 +9,7 @@ from django.utils import translation
 from django.http import JsonResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from taggit.models import Tag
-from core.models import Product, Category, Vendor, CartOrder, CartOrderProducts, ProductImages, ProductReview, wishlist_model, Address, Slider, Banner
+from core.models import Product, Category, Vendor, CartOrder, CartOrderProducts, ProductImages, ProductReview, wishlist_model, Address, Slider
 from userauths.models import ContactUs, Profile
 from core.forms import ProductReviewForm
 from django.template.loader import render_to_string
@@ -40,7 +40,6 @@ def index(request):
     vendors = Vendor.objects.all()
     categoty = Category.objects.all()
     sliders = Slider.objects.all()
-    banners = Banner.objects.all()
 
     context = {
         "products":products,
@@ -53,7 +52,6 @@ def index(request):
         "vendors":vendors,
         "categoty":categoty,
         "sliders":sliders,
-        "banners": banners
     }
 
     return render(request, 'core/index.html', context)
