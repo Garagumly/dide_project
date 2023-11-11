@@ -184,9 +184,9 @@ JAZZMIN_SETTINGS = {
     'copyright': "dide-shop.com",
 }
 
-LOGIN_URL = "userauths:sign-in"
+LOGIN_URL = "sign-in"
 LOGIN_REDIRECT_URL = "core:index"
-LOGOUT_REDIRECT_URL = "userauths:sign-in"
+LOGOUT_REDIRECT_URL = "sign-in"
 
 AUTH_USER_MODEL = 'userauths.User'
 
