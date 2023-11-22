@@ -4774,7 +4774,7 @@ table .product-thumbnail img {
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-evenly;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -12580,4 +12580,11 @@ footer .hotline img {
     }
 }
 
+#cart-price-center {
+    text-align: center;
+}
+
+#quantity-center {
+    width: 30% !important;
+}
 /*# sourceMappingURL=main.css.map */

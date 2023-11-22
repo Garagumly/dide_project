@@ -133,7 +133,7 @@
 
                                                                 {% endif %}
                                                                 <td>${{o.price}}</td>
-                                                                <td><a href="{% url 'order-detail' o.id %}" class="btn-small d-block">{% trans 'View' %}</a></td>
+                                                                <td><a href="{% url 'core-order-detail' o.id %}" class="btn-small d-block">{% trans 'View' %}</a></td>
                                                             </tr>
                                                             {% endfor %}
                                                         </tbody>

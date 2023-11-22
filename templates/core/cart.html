@@ -54,11 +54,11 @@
                                     </td>
                                     <td class="price" data-title="Price">
                                         <!-- <h4 class="text-body">${{item.price|floatformat:2}}</h4> -->
-                                        <h4 class="text-body">${{item.price}}</h4>
+                                        <h4 id="cart-price-center" class="text-body">${{item.price}}</h4>
                                     </td>
                                     <td class="text-center detail-info" data-title="Stock">
                                         <div class="mr-15">
-                                            <input type="number" placeholder="Qty" class="w-25 product-qty-{{ product_id }}"  name="" value="{{ item.qty }}" id="">
+                                            <input type="number" placeholder="Qty" class="w-25 product-qty-{{ product_id }}"  name="" value="{{ item.qty }}" id="quantity-center">
                                         </div>
                                     </td>
                                     <td class="price" data-title="Price">

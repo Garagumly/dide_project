@@ -3,19 +3,13 @@
 {% load i18n %}
 {% block content %}
     <main class="main">
-        <div class="page-header mt-30 mb-50">
+        <div class="page-header breadcrumb-wrap">
             <div class="container">
-                <div class="archive-header">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3">
-                            <h1 class="mb-15">{{category.title}}</h1>
-                            <div class="breadcrumb">
-                                <a href="{% url 'index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>{% trans 'Home' %}</a>
-                                <span></span> Shop <span></span> {{category.title}}
-                            </div>
-                        </div>
-                        
-                    </div>
+                <div class="breadcrumb">
+                    <a href="{% url 'index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>{% trans 'Home' %}</a>
+                    <span></span> <a href="{% url 'category-list' %}">{% trans 'All Categories' %}</a>
+                    <span></span> <a href="{% url 'sub-category-list' category.parent.cid %}">{{category.parent.title}}</a> <span></span>
+                    {{category.title}}
                 </div>
             </div>
         </div>
@@ -79,11 +73,6 @@
 
                                         </a>
                                     </div>
-                                    <div class="product-action-1">
-                                        <a aria-label="Add To Wishlist"  class="action-btn add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart"></i></a>
-                                        <!-- <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> -->
-                                        <a href="{% url 'product-detail' p.pid %}" class="action-btn"><i class="fi-rs-eye"></i></a>
-                                    </div>
                                     <div class="product-badges product-badges-position product-badges-mrg">
                                         {% if p.product_sale_status == 'hot' %}
                                         <span class="hot">{{p.product_sale_status|capfirst}}</span>
@@ -101,14 +90,14 @@
                                         <a href="{% url 'product-detail' p.pid %}">{{ p.category.title }}</a>
                                     </div>
                                     <h2><a href="shop-product-right.html">{{ p.title }}</a></h2>
-                                    <div class="product-rate-cover">
+                                    <!-- <div class="product-rate-cover">
                                         <i class="fas fa-star text-warning"></i>
                                         <span class="font-small ml-5 text-muted"> ({{ p.reviews.all.count }})</span>
 
                                     </div>
                                     <div>
                                         <span class="font-small text-muted">By <a href="{% url 'vendor-detail' p.vendor.vid %}">{{p.vendor.title}}</a></span>
-                                    </div>
+                                    </div> -->
                                     <div class="product-card-bottom">
                                         <div class="product-price">
                                             <span>$</span> <span class="current-product-price-{{ p.id }}">{{p.price}}</span>

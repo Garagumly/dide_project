@@ -334,13 +334,13 @@ msgstr "Новые продукты"
 #, fuzzy
 #| msgid "Vendors"
 msgid "Shop by Vendors"
-msgstr "Продавцы"
+msgstr "Магазины"
 
 #: .\templates\core\index.html:319
 #, fuzzy
 #| msgid "Vendors"
 msgid "All Vendors"
-msgstr "Продавцы"
+msgstr "Магазины"
 
 #: .\templates\core\index.html:346
 msgid "Top Selling"
@@ -444,7 +444,7 @@ msgstr "Скачать"
 #: .\templates\core\product-detail.html:17
 #: .\templates\core\product-list.html:45 .\templates\partials\base.html:301
 msgid "Shop"
-msgstr "Магазин"
+msgstr "Все Товары"
 
 #: .\templates\core\product-detail.html:137
 msgid "Description"
@@ -455,7 +455,7 @@ msgstr "Описание"
 #, fuzzy
 #| msgid "Vendors"
 msgid "Vendor"
-msgstr "Продавцы"
+msgstr "Магазины"
 
 #: .\templates\core\product-detail.html:146
 #, fuzzy
@@ -557,7 +557,7 @@ msgstr "Категории"
 #, fuzzy
 #| msgid "Vendors"
 msgid "By Vendors"
-msgstr "Продавцы"
+msgstr "Магазины"
 
 #: .\templates\core\product-list.html:93
 msgid "Popular Tags"
@@ -595,7 +595,7 @@ msgstr "товары для вас!"
 #, fuzzy
 #| msgid "Vendors"
 msgid "Vendors List"
-msgstr "Продавцы"
+msgstr "Магазины"
 
 #: .\templates\core\vendor-list.html:95
 msgid "Products"
@@ -681,7 +681,7 @@ msgstr "Акции"
 
 #: .\templates\partials\base.html:305 .\templates\partials\base.html:478
 msgid "Vendors"
-msgstr "Продавцы"
+msgstr "Магазины"
 
 #: .\templates\partials\base.html:388
 msgid "Support Center"

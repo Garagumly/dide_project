@@ -1,6 +1,6 @@
 from django import views
 from django.urls import path, include
-from core.views import set_language, add_to_cart, add_to_wishlist, ajax_add_review, ajax_contact_form, cart_view, category_list_view, category_product_list__view, checkout_view, customer_dashboard, delete_item_from_cart, filter_product, index, make_address_default, order_detail, payment_completed_view, payment_failed_view, product_detail_view, product_list_view, remove_wishlist, search_view, tag_list, update_cart, vendor_detail_view, vendor_list_view, wishlist_view, contact, about_us, purchase_guide, privacy_policy, terms_of_service
+from core.views import *
 
 
 urlpatterns = [
@@ -12,10 +12,12 @@ urlpatterns = [
          set_language, name="set-language"),
 
     path("products/", product_list_view, name="product-list"),
+    path("delas/", deal_product_list_view, name="deal-product-list"),
     path("product/<pid>/", product_detail_view, name="product-detail"),
 
     # Category
     path("category/", category_list_view, name="category-list"),
+    path("sub_category/<cid>/", sub_category_list_view, name="sub-category-list"),
     path("category/<cid>/", category_product_list__view, name="category-product-list"),
 
     # Vendor
@@ -59,13 +61,13 @@ urlpatterns = [
     path("payment-failed/", payment_failed_view, name="payment-failed"),
 
     # Dahboard URL
-    path("dashboard/", customer_dashboard, name="dashboard"),
+    path("dashboard/", customer_dashboard, name="core-dashboard"),
 
     # Order Detail URL
-    path("dashboard/order/<int:id>", order_detail, name="order-detail"),
+    path("dashboard/order/<int:id>", order_detail, name="core-order-detail"),
 
     # Making address defauly
-    path("make-default-address/", make_address_default, name="make-default-address"),
+    path("make-default-address/", make_address_default, name="core-make-default-address"),
 
     # wishlist page
     path("wishlist/", wishlist_view, name="wishlist"),

@@ -15,7 +15,15 @@
                 <a href="{% url 'product-detail' p.pid %}" class="action-btn"><i class="fi-rs-eye"></i></a>
             </div>
             <div class="product-badges product-badges-position product-badges-mrg">
-                <span class="hot">-{{p.get_precentage|floatformat:0}}%</span>
+                {% if p.product_sale_status == 'hot' %}
+                <span class="hot">{{p.product_sale_status|capfirst}}</span>
+                {% elif p.product_sale_status == 'new' %}
+                <span class="new">{{p.product_sale_status|capfirst}}</span>
+                {% elif p.product_sale_status == 'sale' %}
+                <span class="sale">{{p.product_sale_status|capfirst}}</span>
+                {% elif p.old_price %}
+                <span class="best">-{{p.get_precentage|floatformat:0}}%</span>
+                {% endif %}
             </div>
         </div>
         <div class="product-content-wrap">
@@ -23,16 +31,13 @@
                 <a href="shop-grid-right.html">{{ p.category.title }}</a>
             </div>
             <h2><a href="{% url 'product-detail' p.pid %}">{{ p.title }}</a></h2>
-            <div class="product-rate-cover">
-                <!-- <div class="product-rate d-inline-block"> -->
-                    <!-- <div class="product-rating" style="width: 20%"></div> -->
-                <!-- </div> -->
+            <!-- <div class="product-rate-cover">
                 <i class="fas fa-star text-warning"></i>
                 <span class="font-small ml-5 text-muted"> ({{ p.reviews.all.count }})</span>
             </div>
             <div>
                 <span class="font-small text-muted">By <a href="{% url 'vendor-detail' p.vendor.vid %}">{{p.vendor.title}}</a></span>
-            </div>
+            </div> -->
             <div class="product-card-bottom">
                 <div class="product-price">
                     <span>$</span> <span class="current-product-price-{{ p.id }}">{{p.price}}</span>

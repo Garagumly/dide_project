@@ -1,10 +1,18 @@
 from django.contrib import admin
-from core.models import Slider, MainInfo, CartOrderProducts, Product, Category, Vendor, CartOrder, ProductImages, ProductReview, wishlist_model, Address
+from core.models import *
 from modeltranslation.admin import TranslationAdmin
 
 
 class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
+
+
+class ProductAttributeValueInline(admin.TabularInline):
+        model = ProductAttributeValue
+    
+@admin.register(ProductAttribute)
+class ProductAttributeAdmin(admin.ModelAdmin):
+        inlines = [ProductAttributeValueInline]
 
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin):
@@ -54,6 +62,7 @@ class CategoryAdmin(TranslationAdmin):
         }
 
 
+
 # class ProductAdmin(admin.ModelAdmin):
 #     inlines = [ProductImagesAdmin]
 #     list_editable = ['title', 'price', 'featured', 'product_status']
@@ -75,7 +84,7 @@ class CartOrderAdmin(admin.ModelAdmin):
 
 
 class CartOrderProductsAdmin(admin.ModelAdmin):
-    list_display = ['order', 'invoice_no', 'item', 'image','qty', 'price', 'total']
+    list_display = ['order', 'invoice_no', 'item', 'order_img','qty', 'price', 'total']
 
 
 class ProductReviewAdmin(admin.ModelAdmin):
@@ -92,12 +101,27 @@ class AddressAdmin(admin.ModelAdmin):
 
 class MainInfoAdmin(admin.ModelAdmin):
     # list_editable = ['hours', 'mail', 'address', 'phone']
-    list_display = ['name', 'from_hours', 'to_hours', 'mail', 'address', 'phone']
+    list_display = ['name', 'main_image', 'from_hours', 'to_hours', 'mail', 'address', 'phone']
 
 class SliderAdmin(admin.ModelAdmin):
-    list_display = ['title', 'image']
+    list_display = ['title', 'slider_image']
+
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ['title',]
 
 
+class ProductAttributeAdmin(admin.ModelAdmin):
+    list_display = ['title',]
+
+
+# class ProductAttributeValueAdmin(admin.ModelAdmin):
+#     list_display = ['product_attribute', 'attribute_value',]
+
+
+class ProductTypeAdmin(admin.ModelAdmin):
+    list_display = [ 'title',]
+
+# admin.site.register(Product, ProductAdmin) 
 # admin.site.register(Product, ProductAdmin)    
 # admin.site.register(Category, CategoryAdmin)
 # admin.site.register(Vendor, VendorAdmin)
@@ -108,6 +132,11 @@ admin.site.register(wishlist_model, wishlistAdmin)
 admin.site.register(Address, AddressAdmin)
 admin.site.register(MainInfo, MainInfoAdmin)
 admin.site.register(Slider, SliderAdmin)
+admin.site.register(Brand, BrandAdmin)
+# admin.site.register(ProductAttribute, ProductAttributeAdmin)
+# admin.site.register(ProductAttributeValue, ProductAttributeValueInline)
+# admin.site.register(ProductAttributeValue, ProductAttributeValueAdmin)
+admin.site.register(ProductType, ProductTypeAdmin)
 
 
 

@@ -14,7 +14,10 @@
             <div class="container">
                 <div class="breadcrumb">
                     <a href="{% url 'index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>{% trans 'Home' %}</a>
-                    <span></span> <a href="{% url 'product-list' %}">{% trans 'Shop' %}</a> <span></span> {{product.title}}
+                    <span></span> <a href="{% url 'category-list' %}">{% trans 'All Categories' %}</a>
+                    <span></span> <a href="{% url 'sub-category-list' p.category.parent.cid %}">{{p.category.parent.title}}</a> <span></span>
+                    <a href="{% url 'category-product-list' p.category.cid %}" >{{p.category.title}}</a> <span></span>
+                    {{ p.title }}
                 </div>
             </div>
         </div>
@@ -78,16 +81,12 @@
                                             <div class="short-desc mb-30">
                                                 <p class="font-lg">{{p.description|safe|truncatechars:150}}</p>
                                             </div>
-                                            <!-- <div class="attr-detail attr-size mb-30">
-                                                <strong class="mr-10">Size / Weight: </strong>
+                                            <div class="attr-detail attr-size mb-30">
+                                                <strong class="mr-10">{{ p.attribute_values.product_attribute }}: </strong>
                                                 <ul class="list-filter size-filter font-small">
-                                                    <li><a href="#">50g</a></li>
-                                                    <li class="active"><a href="#">60g</a></li>
-                                                    <li><a href="#">80g</a></li>
-                                                    <li><a href="#">100g</a></li>
-                                                    <li><a href="#">150g</a></li>
+                                                    <li class="active"><a href="#">{{ p.attribute_values }}</a></li>
                                                 </ul>
-                                            </div> -->
+                                            </div>
                                             <div class="detail-extralink mb-50">
                                                 <!-- <div class="detail-qty border radius">
                                                     <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
@@ -115,14 +114,11 @@
                                             <div class="font-xs">
                                                 <ul class="mr-50 float-start">
                                                     <li class="mb-5">Type: <span class="text-brand">{{p.type}}</span></li>
-                                                    <li class="mb-5">MFG:<span class="text-brand"> {{p.mfd|date:"d M, Y"}}</span></li>
-                                                    <li>LIFE: <span class="text-brand">{{ p.life }}</span></li>
+                                                    <!-- <li class="mb-5">MFG:<span class="text-brand"> {{p.mfd|date:"d M, Y"}}</span></li> -->
+                                                    <li>{% trans 'Brand' %}: <span class="text-brand">{{ p.brand }}</span></li>
                                                 </ul>
                                                 <ul class="float-start">
                                                     <li class="mb-5">SKU: <a href="#">{{p.sku}}</a></li>
-                                                    {% if p.tags %}
-                                                    <li class="mb-5">Tags: {% for tag in p.tags.all %}<a href="{% url 'tags' tag.slug %}" rel="tag"> #{{tag.name}}</a>,{% endfor %} </li>
-                                                    {% endif %}
                                                     <li>Stock:<span class="in-stock text-brand ml-5">{{p.stock_count}} Items In Stock</span></li>
                                                 </ul>
                                             </div>
@@ -501,7 +497,7 @@
                                              <span class="text-danger">{% trans 'Unverified Address' %} </span>
                                              {% endif %}
                                         </span>
-                                        <a href="{% url 'dashboard' %}" class="change float-end">{% trans 'Change' %}</a>
+                                        <a href="{% url 'core-dashboard' %}" class="change float-end">{% trans 'Change' %}</a>
                                     </li>
                                     <li class="hr"><span></span></li>
                                 </ul>

@@ -76,7 +76,7 @@ def profile_update(request):
             new_form.user = request.user
             new_form.save()
             messages.success(request, "Profile Updated Successfully.")
-            return redirect("dashboard")
+            return redirect("core-dashboard")
     else:
         form = ProfileForm(instance=profile)
 

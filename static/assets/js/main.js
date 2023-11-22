@@ -471,6 +471,15 @@
     /*-----------------------
         Shop filter active 
     ------------------------- */
+    // $(".shop-filter-toogle").on("click", function(e) {
+    //     e.preventDefault();
+    //     $(".shop-product-fillter-header").slideToggle();
+    // });
+    // var shopFiltericon = $(".shop-filter-toogle");
+    // shopFiltericon.on("click", function() {
+    //     $(".shop-filter-toogle").toggleClass("active");
+    // });
+
     $(".shop-filter-toogle").on("click", function(e) {
         e.preventDefault();
         $(".shop-product-fillter-header").slideToggle();
@@ -479,7 +488,6 @@
     shopFiltericon.on("click", function() {
         $(".shop-filter-toogle").toggleClass("active");
     });
-
     /*-------------------------------------
         Product details big image slider
     ---------------------------------------*/

@@ -3,7 +3,7 @@ from useradmin import views
 
 
 urlpatterns = [
-    path("", views.dashboard, name="dashboard"),
+    path("", views.dashboard, name="useradmin-dashboard"),
     path("products/", views.dashboard_products, name="dashboard-products"),
     path("add-products/", views.dashboard_add_product, name="dashboard-add-products"),
     path("edit-products/<pid>/", views.dashboard_edit_product, name="dashboard-edit-products"),

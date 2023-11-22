@@ -371,9 +371,9 @@
                     <div class="sidebar-widget widget-category-2 mb-30">
                         <h5 class="section-title style-1 mb-30">{% trans 'Category' %}</h5>
                         <ul>
-                            {% for c in categories %}
+                            {% for c in parent_cat %}
                             <li>
-                                <a href="{% url 'category-product-list' c.cid %}"> <img src="{{c.image.url}}" alt="" />{{c.title}}</a><span class="count">{{c.category.all.count}}</span>
+                                <a href="{% url 'sub-category-list' c.cid %}"> <img src="{{ c.image.url }}" alt="" />{{c.title}}</a><span class="count">{{c.c_count}}</span>
                             </li>
                             {% endfor %}
                         </ul>

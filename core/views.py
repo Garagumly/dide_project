@@ -39,6 +39,8 @@ def index(request):
     top_rated = Product.objects.filter(product_status="published", featured=True, product_mainpage_status='top_rated').order_by("-id")[:3]
     vendors = Vendor.objects.all()
     categoty = Category.objects.all()
+    # sub_cat = Category.objects.exclude(parent=None).annotate(s_count=Count('category'))
+    parent_cat = Category.objects.filter(parent=None).annotate(c_count=Count('children__category'))
     sliders = Slider.objects.all()
 
     context = {
@@ -51,6 +53,7 @@ def index(request):
         'top_rated':top_rated,
         "vendors":vendors,
         "categoty":categoty,
+        "parent_cat":parent_cat,
         "sliders":sliders,
     }
 
@@ -70,20 +73,41 @@ def product_list_view(request):
 
     return render(request, 'core/product-list.html', context)
 
+def deal_product_list_view(request):
+    products_deal = Product.objects.filter(product_status="published", product_sale_status='deal').order_by("-id")
+
+    context = {
+        "products_deal":products_deal,
+    }
+
+    return render(request, 'core/deals.html', context)
 
 def category_list_view(request):
     categories = Category.objects.all()
+    parent_cat = Category.objects.filter(parent=None).annotate(c_count=Count('children__category'))
 
     context = {
-        "categories":categories
+        "categories":categories,
+        "parent_cat":parent_cat,
     }
     return render(request, 'core/category-list.html', context)
 
+def sub_category_list_view(request, cid):
+    parent = Category.objects.get(cid=cid)
+    sub_cats = Category.objects.filter(parent__cid=cid)
+    # products = Product.objects.filter(product_status="published", category=sub_cats)
+
+    context = {
+        "sub_cats":sub_cats,
+        "parent":parent,
+    }
+    return render(request, 'core/sub-category-list.html', context)
 
 def category_product_list__view(request, cid):
 
-    category = Category.objects.get(cid=cid) # food, Cosmetics
+    category = Category.objects.get(cid=cid)
     products = Product.objects.filter(product_status="published", category=category)
+    # products = Product.objects.filter(product_status="published", category__in=category.children.all())
 
     context = {
         "category":category,
@@ -103,10 +127,12 @@ def vendor_list_view(request):
 def vendor_detail_view(request, vid):
     vendor = Vendor.objects.get(vid=vid)
     products = Product.objects.filter(vendor=vendor, product_status="published").order_by("-id")
+    parent_cat = Category.objects.filter(parent=None).annotate(c_count=Count('children__category'))
 
     context = {
         "vendor": vendor,
         "products": products,
+        "parent_cat": parent_cat,
     }
     return render(request, "core/vendor-detail.html", context)
 
@@ -206,13 +232,19 @@ def ajax_add_review(request, pid):
 
 
 def search_view(request):
-    query = request.GET.get("q")
 
-    products = Product.objects.filter(title__icontains=query).order_by("-date")
+    title = request.GET.get("q")
+    
+    if request.GET.get("r"):
+        category = Category.objects.get(cid=request.GET.get("r"))
+        products = Product.objects.filter(title__icontains=title, category__in=category.children.all()).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
+    else:
+        products = Product.objects.filter(title__icontains=title).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
+        # products = Product.objects.filter(title__icontains=title, description__icontains=title).order_by("-date")
 
     context = {
         "products": products,
-        "query": query,
+        "title": title,
     }
     return render(request, "core/search.html", context)
 
@@ -220,6 +252,7 @@ def search_view(request):
 def filter_product(request):
     categories = request.GET.getlist("category[]")
     vendors = request.GET.getlist("vendor[]")
+    types = request.GET.getlist("product_type[]")
 
 
     min_price = request.GET['min_price']
@@ -237,7 +270,10 @@ def filter_product(request):
     if len(vendors) > 0:
         products = products.filter(vendor__id__in=vendors).distinct() 
     
-    
+    if len(types) > 0:
+        products = products.filter(type__id__in=types).distinct()
+
+
     data = render_to_string("core/async/product-list.html", {"products": products})
     return JsonResponse({"data": data})
 
@@ -275,9 +311,9 @@ def cart_view(request):
     cart_total_amount = 0
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
-            # price = item['price'].replace(',', '.')
-            # cart_total_amount += int(item['qty']) * float(price)
             cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
+            sub_total = item['qty']
+            # cart_total_amount += int(item['qty']) * item['price']
         return render(request, "core/cart.html", {"cart_data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount':cart_total_amount})
     else:
         messages.warning(request, "Your cart is empty")
@@ -296,6 +332,7 @@ def delete_item_from_cart(request):
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
             cart_total_amount += int(item['qty']) * float(item['price'])
+            # cart_total_amount += int(item['qty']) * item['price']
 
     context = render_to_string("core/async/cart-list.html", {"cart_data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount':cart_total_amount})
     return JsonResponse({"data": context, 'totalcartitems': len(request.session['cart_data_obj'])})
@@ -314,7 +351,8 @@ def update_cart(request):
     cart_total_amount = 0
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
-            cart_total_amount += int(item['qty']) * float(item['price'])
+            cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
+            # cart_total_amount += int(item['qty']) * item['price']
 
     context = render_to_string("core/async/cart-list.html", {"cart_data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount':cart_total_amount})
     return JsonResponse({"data": context, 'totalcartitems': len(request.session['cart_data_obj'])})
@@ -341,6 +379,7 @@ def checkout_view(request):
         # Getting total amount for The Cart
         for p_id, item in request.session['cart_data_obj'].items():
             cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
+            # cart_total_amount += int(item['qty']) * item['price']
 
             cart_order_products = CartOrderProducts.objects.create(
                 order=order,
@@ -349,7 +388,9 @@ def checkout_view(request):
                 image=item['image'],
                 qty=item['qty'],
                 price=item['price'].replace(',', '.'),
-                total=float(item['qty']) * float(item['price'].replace(',', '.'))
+                # price=item['price'],
+                total=int(item['qty']) * float(item['price'].replace(',', '.'))
+                # total=item['qty'] * item['price']
             )
 
         host = request.get_host()
@@ -386,6 +427,7 @@ def payment_completed_view(request):
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
             cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
+            # cart_total_amount += int(item['qty']) * item['price']
     return render(request, 'core/payment-completed.html',  {'cart_data':request.session['cart_data_obj'],'totalcartitems':len(request.session['cart_data_obj']),'cart_total_amount':cart_total_amount})
 
 @login_required
@@ -417,7 +459,7 @@ def customer_dashboard(request):
             mobile=mobile,
         )
         messages.success(request, "Address Added Successfully.")
-        return redirect("dashboard")
+        return redirect("core-dashboard")
     else:
         print("Error")
     

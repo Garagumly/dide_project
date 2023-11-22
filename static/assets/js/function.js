@@ -251,7 +251,7 @@ $(document).ready(function (){
         console.log("Element is:", this_val);
 
         $.ajax({
-            url: "/make-default-address",
+            url: "/core-make-default-address",
             data: {
                 "id":id
             },
