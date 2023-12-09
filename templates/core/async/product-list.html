@@ -9,11 +9,6 @@
 
                 </a>
             </div>
-            <div class="product-action-1">
-                <a aria-label="Add To Wishlist"  class="action-btn add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart"></i></a>
-                <!-- <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> -->
-                <a href="{% url 'product-detail' p.pid %}" class="action-btn"><i class="fi-rs-eye"></i></a>
-            </div>
             <div class="product-badges product-badges-position product-badges-mrg">
                 {% if p.product_sale_status == 'hot' %}
                 <span class="hot">{{p.product_sale_status|capfirst}}</span>
@@ -28,7 +23,7 @@
         </div>
         <div class="product-content-wrap">
             <div class="product-category">
-                <a href="shop-grid-right.html">{{ p.category.title }}</a>
+                <a href="{% url 'category-product-list' p.category.cid %}">{{ p.category.title }}</a>
             </div>
             <h2><a href="{% url 'product-detail' p.pid %}">{{ p.title }}</a></h2>
             <!-- <div class="product-rate-cover">
@@ -40,8 +35,8 @@
             </div> -->
             <div class="product-card-bottom">
                 <div class="product-price">
-                    <span>$</span> <span class="current-product-price-{{ p.id }}">{{p.price}}</span>
-                    <span class="old-price">${{p.old_price}}</span>
+                    <span class="current-product-price-{{ p.id }}">{{p.price}}</span> TMT<span></span>
+                    {% if p.old_price %}<span class="old-price">{{p.old_price}}</span>TMT{% endif %}
                 </div>
                 <div class="add-cart">
                     <input type="hidden" value="1" id="product-quantity" class="product-quantity-{{ p.id }}">
@@ -51,7 +46,7 @@
                     <input type="hidden" class="product-title-{{ p.id }}" value="{{ p.title }}">
 
                     <div class="d-flex">
-                        <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>Add</button>
+                        <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i></button>
                         <button style="border: none; background: none;" class="add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart" style="fill: aqua;"></i></button>
                     </div>
                 </div>

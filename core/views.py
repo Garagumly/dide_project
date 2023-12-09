@@ -9,7 +9,7 @@ from django.utils import translation
 from django.http import JsonResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from taggit.models import Tag
-from core.models import Product, Category, Vendor, CartOrder, CartOrderProducts, ProductImages, ProductReview, wishlist_model, Address, Slider
+from core.models import AboutUs, Product, Category, Brand, Vendor, CartOrder, CartOrderProducts, ProductImages, ProductReview, wishlist_model, Address, Slider
 from userauths.models import ContactUs, Profile
 from core.forms import ProductReviewForm
 from django.template.loader import render_to_string
@@ -25,6 +25,7 @@ import calendar
 from django.db.models import Count, Avg
 from django.db.models.functions import ExtractMonth
 from django.core import serializers
+from django.core.paginator import Paginator
 
 # from django.core.paginator import Paginator
 
@@ -38,6 +39,7 @@ def index(request):
     recent = Product.objects.filter(product_status="published", featured=True, product_mainpage_status='recent').order_by("-id")[:3]
     top_rated = Product.objects.filter(product_status="published", featured=True, product_mainpage_status='top_rated').order_by("-id")[:3]
     vendors = Vendor.objects.all()
+    brands = Brand.objects.all()
     categoty = Category.objects.all()
     # sub_cat = Category.objects.exclude(parent=None).annotate(s_count=Count('category'))
     parent_cat = Category.objects.filter(parent=None).annotate(c_count=Count('children__category'))
@@ -52,6 +54,7 @@ def index(request):
         'recent':recent,
         'top_rated':top_rated,
         "vendors":vendors,
+        "brands":brands,
         "categoty":categoty,
         "parent_cat":parent_cat,
         "sliders":sliders,
@@ -92,9 +95,29 @@ def category_list_view(request):
     }
     return render(request, 'core/category-list.html', context)
 
+def brand_list_view(request):
+    brands = Brand.objects.all()
+
+    context = {
+        "brands":brands,
+    }
+    return render(request, 'core/brand-list.html', context)
+
+def brand_product_list__view(request, bid):
+
+    brand = Brand.objects.get(bid=bid)
+    products = Product.objects.filter(product_status="published", brand=brand)
+
+    context = {
+        "brand":brand,
+        "products":products,
+    }
+    return render(request, "core/brand-product-list.html", context)
+
 def sub_category_list_view(request, cid):
     parent = Category.objects.get(cid=cid)
-    sub_cats = Category.objects.filter(parent__cid=cid)
+    sub_cats = Category.objects.filter(parent__cid=cid).annotate(c_count=Count('category'))
+    # parent_cat = Category.objects.filter(parent=None).annotate(c_count=Count('children__category'))
     # products = Product.objects.filter(product_status="published", category=sub_cats)
 
     context = {
@@ -128,11 +151,21 @@ def vendor_detail_view(request, vid):
     vendor = Vendor.objects.get(vid=vid)
     products = Product.objects.filter(vendor=vendor, product_status="published").order_by("-id")
     parent_cat = Category.objects.filter(parent=None).annotate(c_count=Count('children__category'))
+    
+    paginator = Paginator(products, 20)
+    page_number = request.GET.get("page")
+    page_product = paginator.get_page(page_number)
+    start_product = paginator.get_page(page_number).start_index()
+    end_product = paginator.get_page(page_number).end_index()
 
     context = {
         "vendor": vendor,
         "products": products,
         "parent_cat": parent_cat,
+        "all_products": page_product,
+        "paginator": paginator,
+        "start_product": start_product,
+        "end_product": end_product
     }
     return render(request, "core/vendor-detail.html", context)
 
@@ -140,7 +173,7 @@ def vendor_detail_view(request, vid):
 def product_detail_view(request, pid):
     product = Product.objects.get(pid=pid)
     # product = get_object_or_404(Product, pid=pid)
-    products = Product.objects.filter(category=product.category).exclude(pid=pid)
+    products = Product.objects.filter(category=product.category).exclude(pid=pid)[:8]
 
     # Getting all reviews related to a product
     reviews = ProductReview.objects.filter(product=product).order_by("-date")
@@ -172,6 +205,7 @@ def product_detail_view(request, pid):
 
 
     p_image = product.p_images.all()
+    p_attribute = product.productattributevaluess.all()
 
     context = {
         "p": product,
@@ -179,6 +213,7 @@ def product_detail_view(request, pid):
         "make_review": make_review,
         "review_form": review_form,
         "p_image": p_image,
+        "p_attribute": p_attribute,
         "average_rating": average_rating,
         "reviews": reviews,
         "products": products,
@@ -233,18 +268,48 @@ def ajax_add_review(request, pid):
 
 def search_view(request):
 
+    products = Product.objects.all()
+
     title = request.GET.get("q")
-    
-    if request.GET.get("r"):
-        category = Category.objects.get(cid=request.GET.get("r"))
-        products = Product.objects.filter(title__icontains=title, category__in=category.children.all()).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
+    cat = request.GET.get("r")
+
+    if title and cat:
+        category = Category.objects.get(cid=cat)
+        products = Product.objects.filter(title__icontains=title, category__parent=category).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
+
+    elif cat:
+        category = Category.objects.get(cid=cat)
+        products = Product.objects.filter(category__parent=category).order_by("-date")
+
     else:
         products = Product.objects.filter(title__icontains=title).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
+
+    # if request.GET.get("r"):
+    #     category = Category.objects.get(cid=request.GET.get("r"))
+    #     products = Product.objects.filter(title__icontains=title, category__in=category.children.all()).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
+    
+    # elif title == None:
+    #     products =  Product.objects.all()
+
+    # else:
+    #     products = Product.objects.filter(title__icontains=title).order_by("-date") | Product.objects.filter(description__icontains=title).order_by("-date")
         # products = Product.objects.filter(title__icontains=title, description__icontains=title).order_by("-date")
+
+    paginator = Paginator(products, 20)
+    page_number = request.GET.get("page")
+    page_product = paginator.get_page(page_number)
+    start_product = paginator.get_page(page_number).start_index()
+    end_product = paginator.get_page(page_number).end_index()
 
     context = {
         "products": products,
         "title": title,
+        "all_products": page_product,
+        "paginator": paginator,
+        "start_product": start_product,
+        "end_product": end_product,
+        'title':title,
+        'cat':cat,
     }
     return render(request, "core/search.html", context)
 
@@ -309,12 +374,19 @@ def add_to_cart(request):
 
 def cart_view(request):
     cart_total_amount = 0
+    sub_total = 0
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
+            
+            print(item['price'],'#####################################')
+            print(type(item['price']))
+            if int(item['qty']) > 0:
+                sub_total = int(item['qty']) * float(item['price'].replace(',', '.'))
+            else:
+                sub_total = 0
             cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
-            sub_total = item['qty']
             # cart_total_amount += int(item['qty']) * item['price']
-        return render(request, "core/cart.html", {"cart_data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount':cart_total_amount})
+        return render(request, "core/cart.html", {"cart_data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount':cart_total_amount, 'sub_total':sub_total})
     else:
         messages.warning(request, "Your cart is empty")
         return redirect("index")
@@ -331,7 +403,7 @@ def delete_item_from_cart(request):
     cart_total_amount = 0
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
-            cart_total_amount += int(item['qty']) * float(item['price'])
+            cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
             # cart_total_amount += int(item['qty']) * item['price']
 
     context = render_to_string("core/async/cart-list.html", {"cart_data":request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount':cart_total_amount})
@@ -426,9 +498,10 @@ def payment_completed_view(request):
     cart_total_amount = 0
     if 'cart_data_obj' in request.session:
         for p_id, item in request.session['cart_data_obj'].items():
+            sub_total = int(item['qty']) * float(item['price'].replace(',', '.'))
             cart_total_amount += int(item['qty']) * float(item['price'].replace(',', '.'))
             # cart_total_amount += int(item['qty']) * item['price']
-    return render(request, 'core/payment-completed.html',  {'cart_data':request.session['cart_data_obj'],'totalcartitems':len(request.session['cart_data_obj']),'cart_total_amount':cart_total_amount})
+    return render(request, 'core/payment-completed.html',  {'cart_data':request.session['cart_data_obj'],'totalcartitems':len(request.session['cart_data_obj']),'cart_total_amount':cart_total_amount, 'sub_total':sub_total})
 
 @login_required
 def payment_failed_view(request):
@@ -591,7 +664,13 @@ def ajax_contact_form(request):
 
 
 def about_us(request):
-    return render(request, "core/about_us.html")
+    info = AboutUs.objects.all()[0]
+    brands = Brand.objects.all()
+    context = {
+        'brands':brands,
+        'info':info,
+    }
+    return render(request, "core/about_us.html", context)
 
 
 def purchase_guide(request):

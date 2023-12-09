@@ -20,11 +20,11 @@
     <link rel="stylesheet" href="{% static 'assets/css/plugins/slider-range.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> -->
+    <link href="{% static 'assets/css/all.min.css' %}" rel="stylesheet" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/chart.js' %}"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -129,9 +129,6 @@
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
                                             <li><a href="{% url 'core-dashboard' %}"><i class="fi fi-rs-user mr-10"></i>{% trans 'My Account' %}</a></li>
-                                            <!-- <li><a href="{% url 'useradmin-dashboard' %}"><i class="fi fi-rs-user mr-10"></i>{% trans 'Admin Dashboard' %}</a></li> -->
-                                            <!-- <li><a href="page-account.html"><i class="fi fi-rs-location-alt mr-10"></i>Order Tracking</a></li> -->
-                                            <!-- <li><a href="page-account.html"><i class="fi fi-rs-label mr-10"></i>My Voucher</a></li> -->
                                             <li><a href="{% url 'wishlist' %}"><i class="fi fi-rs-heart mr-10"></i>{% trans 'My Wishlist' %}</a></li>
                                             <li><a href="{% url 'core-dashboard' %}"><i class="fi fi-rs-settings-sliders mr-10"></i>{% trans 'Setting' %}</a></li>
                                             {% if request.user.is_authenticated %}
@@ -157,7 +154,7 @@
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
                             <a class="categories-button-active" href="{% url 'index' %}">
-                                <span class="fi-rs-apps"></span>{% trans 'Home' %}
+                                <span class="fi-rs-home"></span>{% trans 'Home' %}
                             </a>
                         </div>
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
@@ -166,7 +163,6 @@
                                     <li class="hot-deals"><img src="{% static 'assets/imgs/theme/icons/icon-hot.svg' %}" alt="hot deals" /><a href="{% url 'deal-product-list' %}">{% trans 'Deals' %}</a></li>
                                     <!-- <li>
                                     <a class="active" href="{% url 'index' %}">{% trans 'Home' %}</a>
-
                                     </li> -->
                                     <li>
                                         <a href="{% url 'product-list'  %}">{% trans 'Shop' %}</a>
@@ -174,7 +170,9 @@
 
                                     <li>
                                         <a href="{% url 'vendor-list' %}">{% trans 'Vendors' %} </a>
-
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'brand-list' %}">{% trans 'Brands' %} </a>
                                     </li>
                                     <li class="position-static">
                                         <a href="{% url 'category-list' %}">{% trans 'All Categories' %} <i class="fi-rs-angle-down"></i></a>
@@ -189,33 +187,13 @@
                                                 </ul>
                                             </li>
                                             {% endfor %}
-                                            <!-- <li class="sub-mega-menu sub-mega-menu-width-34">
-                                                <div class="menu-banner-wrap">
-                                                    <a href="shop-product-right.html"><img src="{% static 'assets/imgs/banner/banner-menu.png' %}" alt="Nest" /></a>
-                                                    <div class="menu-banner-content">
-                                                        <h4>Hot deals</h4>
-                                                        <h3>
-                                                            Don't miss<br /> Trending
-                                                        </h3>
-                                                        <div class="menu-banner-price">
-                                                            <span class="new-price text-success">Save to 50%</span>
-                                                        </div>
-                                                        <div class="menu-banner-btn">
-                                                            <a href="shop-product-right.html">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="menu-banner-discount">
-                                                        <h3>
-                                                            <span>25%</span> off
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </li> -->
-                                            
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="{% url 'contact' %}">{% trans  'Contact' %}</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'about_us' %}">{% trans  'About Us' %}</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -307,47 +285,21 @@
                             <li class="menu-item-has-children">
                                 <a href="{% url 'category-list' %}">{% trans 'Category' %}</a>
                                 <ul class="dropdown">
-                                    {% for c in categories %}
-                                    <li><a href="{% url 'category-product-list' c.cid %}">{{c.title}}</a></li>
+                                    {% for c in parent_cat %}
+                                    <li class="menu-item-has-children">
+                                        {{c.title}}
+                                        <ul class="dropdown">
+                                            {% for children in c.children.all %}
+                                            <li><a href="{% url 'category-product-list' children.cid %}">{{ children.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
                                     {% endfor %}
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="{% url 'vendor-list' %}">{% trans  'Vendors' %}</a>
-                            </li>
-                            <!-- <li class="menu-item-has-children">
-                                <a href="#">Mega menu</a>
-                                <ul class="dropdown">
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Women's Fashion</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Dresses</a></li>
-                                            <li><a href="shop-product-right.html">Blouses & Shirts</a></li>
-                                            <li><a href="shop-product-right.html">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="shop-product-right.html">Women's Sets</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Men's Fashion</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Jackets</a></li>
-                                            <li><a href="shop-product-right.html">Casual Faux Leather</a></li>
-                                            <li><a href="shop-product-right.html">Genuine Leather</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Technology</a>
-                                        <ul class="dropdown">
-                                            <li><a href="shop-product-right.html">Gaming Laptops</a></li>
-                                            <li><a href="shop-product-right.html">Ultraslim Laptops</a></li>
-                                            <li><a href="shop-product-right.html">Tablets</a></li>
-                                            <li><a href="shop-product-right.html">Laptop Accessories</a></li>
-                                            <li><a href="shop-product-right.html">Tablet Accessories</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li> -->
-                            
+                            </li>                            
                             <li class="menu-item-has-children">
                                 <a href="#">{% trans 'Language' %}</a>
                                 <ul class="dropdown">
@@ -394,103 +346,16 @@
 
 
     <footer class="main">
-        <!-- <section class="newsletter mb-15">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="position-relative newsletter-inner">
-                            <div class="newsletter-content">
-                                <h2 class="mb-20">
-                                    Stay home & get your daily 
-                                </h2>
-                            </div>
-                            <img src="{% static 'assets/imgs/banner/banner-9.png' %}" alt="newsletter" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- <section class="featured section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{% static 'assets/imgs/theme/icons/icon-1.svg' %}" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Best prices & offers</h3>
-                                <p>Orders $50 or more</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{% static 'assets/imgs/theme/icons/icon-2.svg' %}" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Free delivery</h3>
-                                <p>24/7 amazing services</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{% static 'assets/imgs/theme/icons/icon-3.svg' %}" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Great daily deal</h3>
-                                <p>When you sign up</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{% static 'assets/imgs/theme/icons/icon-4.svg' %}" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Wide assortment</h3>
-                                <p>Mega Discounts</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{% static 'assets/imgs/theme/icons/icon-5.svg' %}" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Easy returns</h3>
-                                <p>Within 30 days</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 d-xl-none">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{% static 'assets/imgs/theme/icons/icon-6.svg' %}" alt="" />
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">Safe delivery</h3>
-                                <p>Within 30 days</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+        
         <section class="section-padding footer-mid">
             <div class="container pt-15 pb-20">
                 <div class="row">
                     <div class="col">
                         <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0">
                             <div class="logo mb-30">
-                                <a>{% for m in maininfo %}<img src="{{ m.image.url }}" alt="logo" />{% endfor %}</a>
+                                <!-- <a>{% for m in maininfo %}<img src="{{ m.image.url }}" alt="logo" />{% endfor %}</a> -->
                                 <!-- <p class="font-lg text-heading">Awesome grocery store website template</p> -->
-                    <p class="font-sm mb-0">&copy; {% now "Y" %}, <strong class="text-brand">Dide</strong> {% trans 'All rights reserved' %}</p>
+                    <p class="font-sm mb-0">&copy; {% now "Y" %}, <strong class="text-brand">dide.com.tm </strong> {% trans 'All rights reserved' %}</p>
                             </div>
                             <ul class="contact-infor">
                             </ul>
@@ -523,16 +388,6 @@
                             <li><img src="{% static 'assets/imgs/theme/icons/icon-clock.svg' %}" alt="" /><strong><span>{% for m in maininfo %}{{ m.from_hours|date:'H:i' }} - {{ m.to_hours|date:'H:i' }}{% endfor %}</span></strong></li>
                         </ul>
                     </div>
-                    <!-- <div class="footer-link-widget widget-install-app col">
-                        <h4 class="widget-title">Install App</h4>
-                        <p class="wow fadeIn animated">From App Store or Google Play</p>
-                        <div class="download-app">
-                            <a href="#" class="hover-up mb-sm-2 mb-lg-0"><img class="active" src="{% static 'assets/imgs/theme/app-store.jpg' %}" alt="" /></a>
-                            <a href="#" class="hover-up mb-sm-2"><img src="{% static 'assets/imgs/theme/google-play.jpg' %}" alt="" /></a>
-                        </div>
-                        <p class="mb-20">Secured Payment Gateways</p>
-                        <img class="wow fadeIn animated" src="{% static 'assets/imgs/theme/payment-method.png' %}" alt="" />
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -548,7 +403,7 @@
         </div>
     </div>
     <!-- Vendor JS-->
-    <script data-cfasync="false" src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+    <!-- <script data-cfasync="false" src="{% static '/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script> -->
     <script src="{% static 'assets/js/vendor/modernizr-3.6.0.min.js' %}"></script>
     <script src="{% static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'assets/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>

@@ -52,8 +52,10 @@ def user_directory_path(instance, filename):
 
 class Slider(models.Model):
     title = models.CharField(max_length=100, default="Slider")
-    image = models.ImageField(upload_to="base-index", default="logo.jpg")
+    image = models.ImageField(upload_to="base-index", default="logo.png")
 
+    class Meta:
+        verbose_name_plural = "Слайдеры"
 
     def slider_image(self):
         return mark_safe('<img src="%s" width="80" height="50" />' % (self.image.url))
@@ -65,38 +67,27 @@ class MainInfo(models.Model):
     mail = models.CharField(max_length=100, default="dide@gmail.com.")
     address = models.CharField(max_length=100, default="123 Main Street.")
     phone = models.CharField(max_length=100, default="+123 (456) 789")
-    image = models.ImageField(upload_to="base-index", default="logo.jpg")
+    image = models.ImageField(upload_to="base-index", default="logo.png")
+
+    class Meta:
+        verbose_name_plural = "Основная информация"
 
     def main_image(self):
         return mark_safe('<img src="%s" width="80" height="50" />' % (self.image.url))
 
-# class Category(models.Model):
-#     cid = ShortUUIDField(unique=True, length=10, max_length=20, prefix="cat", alphabet="abcdefgh12345")
-
-#     title = models.CharField(max_length=100, default="Food")
-#     image = models.ImageField(upload_to="category", default="category.jpg")
-
-#     class Meta:
-#         verbose_name_plural = "Categories"
-
-#     def category_image(self):
-#         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
-
-#     def __str__(self):
-#         return self.title
 
 
 class Category(models.Model):
     cid = ShortUUIDField(unique=True, length=10, max_length=20,
                          prefix="cat", alphabet="abcdefgh12345")
-
+    
     title = models.CharField(max_length=100, default="Parcel")
-    image = models.ImageField(upload_to="category_imgs", default="logo.jpg")
+    image = models.ImageField(upload_to="category_imgs", default="didecat.jpeg")
     parent = models.ForeignKey("self", on_delete=models.PROTECT, related_name="children",
                                null=True, blank=True, unique=False, verbose_name=("parent of category"),)
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = "Категории"
 
     def category_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
@@ -114,12 +105,12 @@ class Vendor(models.Model):
                          prefix="ven", alphabet="abcdefgh12345")
 
     title = models.CharField(max_length=100, default="Dide")
-    image = models.ImageField(upload_to="product-images", default="vendor.jpg")
+    image = models.ImageField(upload_to="category_imgs", default="logo.png")
     cover_image = models.ImageField(
-        upload_to="product-images", default="vendor.jpg")
-    # description = models.TextField(null=True, blank=True, default="I am am Amazing Vendor")
-    description = RichTextUploadingField(
-        null=True, blank=True, default="I am am Amazing Vendor")
+        upload_to="category_imgs", default="logo.png")
+    description = models.TextField(null=True, blank=True, default="I am am Amazing Vendor")
+    # description = RichTextUploadingField(
+    #     null=True, blank=True, default="I am am Amazing Vendor")
 
     address = models.CharField(max_length=100, default="123 Main Street.")
     contact = models.CharField(max_length=100, default="+123 (456) 789")
@@ -133,7 +124,7 @@ class Vendor(models.Model):
     date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = "Vendors"
+        verbose_name_plural = "Магазины"
 
     def vendor_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
@@ -148,14 +139,20 @@ class ProductAttribute(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True, )
     description = models.TextField(null=True, blank=True,)
 
+    class Meta:
+        verbose_name_plural = "Атрибуты"
+
     def __str__(self):
         return self.title
 
 
 class ProductAttributeValue(models.Model):
     product_attribute = models.ForeignKey(
-        ProductAttribute, related_name="product_attribute", on_delete=models.PROTECT,)
+        ProductAttribute, related_name="product_attribute", on_delete=models.SET_NULL, null=True)
     attribute_value = models.CharField(max_length=255, null=True, blank=True,)
+
+    class Meta:
+        verbose_name_plural = "Значение атрибута"
 
     def __str__(self):
         return self.attribute_value
@@ -167,6 +164,9 @@ class ProductType(models.Model):
     product_type_attributes = models.ManyToManyField(
         ProductAttribute, related_name="product_type_attributes", through="ProductTypeAttribute",)
 
+    class Meta:
+        verbose_name_plural = "Виды товаров"
+
     def __str__(self):
         return self.title
 
@@ -177,8 +177,13 @@ class Brand(models.Model):
     title = models.CharField(max_length=255, null=True,
                              blank=True, default="Luminarc")
 
+    image = models.ImageField(upload_to="category_imgs", default="logo.png")
+
     class Meta:
-        verbose_name_plural = "Brands"
+        verbose_name_plural = "Бренды"
+
+    def brand_image(self):
+        return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
 
     def __str__(self):
         return self.title
@@ -195,14 +200,14 @@ class Product(models.Model):
         Vendor, on_delete=models.PROTECT, null=True, related_name="product")
     brand = models.ForeignKey(
         Brand, on_delete=models.PROTECT, null=True, related_name="brand",)
-    attribute_values = models.ForeignKey(
-        ProductAttributeValue, on_delete=models.PROTECT, null=True, related_name="product_attribute_values",)
+    # attribute_values = models.ForeignKey(
+    #     ProductAttributeValue, on_delete=models.PROTECT, null=True, related_name="product_attribute_values",)
     type = models.ForeignKey(
         ProductType, related_name="product_type", on_delete=models.PROTECT)
 
     title = models.CharField(max_length=100, default="Fresh Pear")
     image = models.ImageField(
-        upload_to="product-images", default="product.jpg")
+        upload_to="product-images", default="didecat.jpeg")
     # description = models.TextField(null=True, blank=True, default="This is the product")
     description = RichTextUploadingField(
         null=True, blank=True, default="This is the product")
@@ -244,7 +249,7 @@ class Product(models.Model):
     # updated = models.DateTimeField(null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = "Products"
+        verbose_name_plural = "Товары"
 
     def product_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
@@ -282,20 +287,24 @@ class Product(models.Model):
 
 class ProductAttributeValues(models.Model):
     attributevalues = models.ForeignKey(
-        "ProductAttributeValue", related_name="attributevaluess", on_delete=models.PROTECT,)
+        ProductAttributeValue, related_name="attributevaluess", on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(
-        Product, related_name="productattributevaluess", on_delete=models.PROTECT,)
+        Product, related_name="productattributevaluess", on_delete=models.SET_NULL, null=True)
 
     class Meta:
         unique_together = (("attributevalues", "product"),)
+
+    class Meta:
+        verbose_name_plural = "Атрибуты товаров"
+
 
 
 class ProductTypeAttribute(models.Model):
 
     product_attribute = models.ForeignKey(
-        ProductAttribute, related_name="productattribute", on_delete=models.PROTECT,)
+        ProductAttribute, related_name="productattribute", on_delete=models.SET_NULL, null=True)
     product_type = models.ForeignKey(
-        ProductType, related_name="producttype", on_delete=models.PROTECT,)
+        ProductType, related_name="producttype", on_delete=models.SET_NULL, null=True)
 
     class Meta:
         unique_together = (("product_attribute", "product_type"),)
@@ -303,14 +312,29 @@ class ProductTypeAttribute(models.Model):
 
 class ProductImages(models.Model):
     images = models.ImageField(
-        upload_to="product-images", default="product.jpg")
+        upload_to="product-images", default="didecat.jpeg")
     product = models.ForeignKey(
         Product, related_name="p_images", on_delete=models.SET_NULL, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = "Product Images"
+        verbose_name_plural = "Изображения товаров"
 
+
+class AboutUs(models.Model):
+    image = models.ImageField(upload_to="base-index", default="logo.png")
+    title = models.CharField(max_length=100,)
+    description = models.TextField(null=True, blank=True,)
+    we = models.TextField(null=True, blank=True, help_text='кто мы')
+    history = models.TextField(null=True, blank=True, help_text='наша история')
+    mission = models.TextField(null=True, blank=True, help_text='наша миссия')
+
+    class Meta:
+        verbose_name = "Информация О нас"
+        verbose_name_plural = "Информация О нас"
+
+    def main_image(self):
+        return mark_safe('<img src="%s" width="80" height="50" />' % (self.image.url))
 
 ############################################## Cart, Order, OrderITems and Address ##################################
 ############################################## Cart, Order, OrderITems and Address ##################################
@@ -330,7 +354,7 @@ class CartOrder(models.Model):
                          prefix="SKU", max_length=20, alphabet="abcdefgh12345")
 
     class Meta:
-        verbose_name_plural = "Cart Order"
+        verbose_name_plural = "Корзина (Заказы)"
 
 
 class CartOrderProducts(models.Model):
@@ -346,7 +370,7 @@ class CartOrderProducts(models.Model):
         max_digits=99999999999999, decimal_places=2, default="1.99")
 
     class Meta:
-        verbose_name_plural = "Cart Order Items"
+        verbose_name_plural = "Корзина (Товары)"
 
     def order_img(self):
         return mark_safe('<img src="/media/%s" width="50" height="50" />' % (self.image))
@@ -367,7 +391,7 @@ class ProductReview(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = "Product Reviews"
+        verbose_name_plural = "Обзоры продуктов"
 
     def __str__(self):
         try:
@@ -380,12 +404,12 @@ class ProductReview(models.Model):
 
 
 class wishlist_model(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = "wishlists"
+        verbose_name_plural = "Избранные"
 
     def __str__(self):
         try:
@@ -395,10 +419,10 @@ class wishlist_model(models.Model):
 
 
 class Address(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     mobile = models.CharField(max_length=300, null=True)
     address = models.CharField(max_length=100, null=True)
     status = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name_plural = "Address"
+        verbose_name_plural = "Адреса пользователей"

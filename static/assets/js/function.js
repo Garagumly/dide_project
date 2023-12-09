@@ -69,7 +69,8 @@ $(document).ready(function (){
         let filter_object = {}
 
         let min_price = $("#max_price").attr("min")
-        let max_price = $("#max_price").val()
+        // let max_price = $("#max_price").val()
+        let max_price = $("#max_price").attr('max')
 
         filter_object.min_price = min_price;
         filter_object.max_price = max_price;
@@ -144,6 +145,7 @@ $(document).ready(function (){
     
         let product_id = $(".product-id-" + index).val()
         let product_price = $(".current-product-price-" + index).text()
+        // let product_price = $(".current-product-price-" + index).val()
     
         let product_pid = $(".product-pid-" + index).val()
         let product_image = $(".product-image-" + index).val()
@@ -205,6 +207,7 @@ $(document).ready(function (){
                 this_val.show()
                 $(".cart-items-count").text(response.totalcartitems)
                 $("#cart-list").html(response.data)
+
             }
         })
     

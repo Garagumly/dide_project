@@ -6,19 +6,31 @@ from modeltranslation.admin import TranslationAdmin
 class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
 
+class ProductAttributeValuesAdmin(admin.TabularInline):
+    model = ProductAttributeValues
 
 class ProductAttributeValueInline(admin.TabularInline):
         model = ProductAttributeValue
     
 @admin.register(ProductAttribute)
 class ProductAttributeAdmin(admin.ModelAdmin):
-        inlines = [ProductAttributeValueInline]
+    inlines = [ProductAttributeValueInline]
+
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
 @admin.register(Product)
 class ProductAdmin(TranslationAdmin):
-    inlines = [ProductImagesAdmin]
-    list_editable = ['title', 'price', 'featured', 'product_status']
-    list_display = ['user', 'title', 'product_image', 'price', 'category', 'vendor', 'featured', 'product_status', 'pid']
+    inlines = [ProductImagesAdmin, ProductAttributeValuesAdmin]
+    list_editable = [ 'price', 'featured', 'product_status']
+    list_display = [ 'title', 'product_image', 'price', 'category', 'vendor', 'featured', 'product_status', 'pid']
 
     class Media:
         js = (
@@ -44,7 +56,19 @@ class VendorAdmin(TranslationAdmin):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
+@admin.register(AboutUs)
+class AboutUsAdmin(TranslationAdmin):
+    list_display = ['title', 'main_image', 'description', 'we', 'history', 'mission',]
 
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
 
 @admin.register(Category)
@@ -61,21 +85,6 @@ class CategoryAdmin(TranslationAdmin):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
-
-
-# class ProductAdmin(admin.ModelAdmin):
-#     inlines = [ProductImagesAdmin]
-#     list_editable = ['title', 'price', 'featured', 'product_status']
-#     list_display = ['user', 'title', 'product_image', 'price', 'category', 'vendor', 'featured', 'product_status', 'pid']
-
-
-
-# class CategoryAdmin(admin.ModelAdmin):
-#     list_display = ['title', 'category_image']
-
-
-# class VendorAdmin(admin.ModelAdmin):
-#     list_display = ['title', 'vendor_image']
 
 
 class CartOrderAdmin(admin.ModelAdmin):
@@ -100,8 +109,8 @@ class AddressAdmin(admin.ModelAdmin):
     list_display = ['user', 'address', 'status']
 
 class MainInfoAdmin(admin.ModelAdmin):
-    # list_editable = ['hours', 'mail', 'address', 'phone']
     list_display = ['name', 'main_image', 'from_hours', 'to_hours', 'mail', 'address', 'phone']
+    
 
 class SliderAdmin(admin.ModelAdmin):
     list_display = ['title', 'slider_image']
@@ -114,17 +123,19 @@ class ProductAttributeAdmin(admin.ModelAdmin):
     list_display = ['title',]
 
 
-# class ProductAttributeValueAdmin(admin.ModelAdmin):
-#     list_display = ['product_attribute', 'attribute_value',]
-
-
 class ProductTypeAdmin(admin.ModelAdmin):
     list_display = [ 'title',]
 
-# admin.site.register(Product, ProductAdmin) 
-# admin.site.register(Product, ProductAdmin)    
-# admin.site.register(Category, CategoryAdmin)
-# admin.site.register(Vendor, VendorAdmin)
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
 admin.site.register(CartOrder, CartOrderAdmin)
 admin.site.register(CartOrderProducts, CartOrderProductsAdmin)
 admin.site.register(ProductReview, ProductReviewAdmin)
@@ -133,9 +144,6 @@ admin.site.register(Address, AddressAdmin)
 admin.site.register(MainInfo, MainInfoAdmin)
 admin.site.register(Slider, SliderAdmin)
 admin.site.register(Brand, BrandAdmin)
-# admin.site.register(ProductAttribute, ProductAttributeAdmin)
-# admin.site.register(ProductAttributeValue, ProductAttributeValueInline)
-# admin.site.register(ProductAttributeValue, ProductAttributeValueAdmin)
 admin.site.register(ProductType, ProductTypeAdmin)
 
 

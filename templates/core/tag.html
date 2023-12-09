@@ -80,11 +80,6 @@
 
                                         </a>
                                     </div>
-                                    <div class="product-action-1">
-                                        <a aria-label="Add To Wishlist"  class="action-btn add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart"></i></a>
-                                        <!-- <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> -->
-                                        <a href="{% url 'product-detail' p.pid %}" class="action-btn"><i class="fi-rs-eye"></i></a>
-                                    </div>
                                     <div class="product-badges product-badges-position product-badges-mrg">
                                         <span class="hot">-{{p.get_precentage|floatformat:0}}%</span>
                                     </div>

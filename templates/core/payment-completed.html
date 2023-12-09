@@ -21,7 +21,7 @@
 <body>
     <div class="invoice invoice-content invoice-5">
         <div class="back-top-home justify-content-center align-items-center text-center hover-up mt-30 ml-30 pb-4">
-            <h3><a class="hover-up" href="{% url 'index' %}"><i class="fi-rs-settings-sliders mr-5"></i> {% trans 'Dashboard' %}</a></h3>
+            <h3><a class="hover-up" href="{% url 'index' %}"><i class="fi-rs-settings-sliders mr-5"></i> {% trans 'Home' %}</a></h3>
         </div>
         <div class="container">
             <div class="row">
@@ -66,23 +66,20 @@
                                                         <span>{{item.title}}</span>
                                                     </div>
                                                 </td>
-                                                <td class="text-center">${{item.price}}</td>
+                                                <td class="text-center">{{item.price}} TMT</td>
                                                 <td class="text-center">{{ item.qty }}</td>
-                                                <td class="text-right">${% widthratio item.price 1 item.qty %}.00</td>
+                                                
+                                                <!-- <td class="text-right">{{ sub_total }} TMT</td> -->
                                             </tr>
                                             {% endfor %}
 
-                                            <tr>
-                                                <td colspan="3" class="text-end f-w-600">{% trans 'SubTotal' %}</td>
-                                                <td class="text-right">${{cart_total_amount}}</td>
-                                            </tr>
                                             <!-- <tr>
-                                                <td colspan="3" class="text-end f-w-600">Tax</td>
-                                                <td class="text-right">$85.99</td>
+                                                <td colspan="3" class="text-end f-w-600">{% trans 'SubTotal' %}</td>
+                                                <td class="text-right">{{cart_total_amount}} TMT</td>
                                             </tr> -->
                                             <tr>
                                                 <td colspan="3" class="text-end f-w-600">{% trans 'Grand Total' %}</td>
-                                                <td class="text-right f-w-600">${{cart_total_amount}}</td>
+                                                <td class="text-right f-w-600">{{cart_total_amount}} TMT</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -93,12 +90,12 @@
                                     <div class="col-md-6">
                                         <h6 class="mb-15">{% trans 'Invoice for' %}</h6>
                                         <p class="font-sm">
-                                            <strong>{% trans 'Invoice To' %}:</strong> {{request.user|title}}<br />
+                                            <strong>{{request.user|title}}</strong><br/>
                                         </p>
                                     </div>
                                     <div class="col-md-6 text-end">
                                         <h6 class="mb-15">{% trans 'Total Amount' %}</h6>
-                                        <h3 class="mt-0 mb-0 text-brand">${{cart_total_amount}}</h3>
+                                        <h3 class="mt-0 mb-0 text-brand">{{cart_total_amount}} TMT</h3>
                                     </div>
                                 </div>
                                 <div class="row text-center">

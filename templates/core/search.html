@@ -3,22 +3,12 @@
 {% load i18n %}
 {% block content %}
     <main class="main">
-        <div class="page-header mt-30 mb-50">
+        <div class="page-header breadcrumb-wrap">
             <div class="container">
-                <div class="archive-header">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3">
-                            {% if title %}
-                            <h1 class="mb-15">{{title}}</h1>
-                            
-                            {% endif %}
-                            <div class="breadcrumb">
-                                <a href="{% url 'index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>{% trans 'Home' %}</a>
-                                <span></span> {{title}}
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="breadcrumb">
+                    <a href="{% url 'index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>{% trans 'Home' %}</a>
+                    <span></span>{% trans 'Search for items' %}
+                    <span></span>{% if title %}{{title}}{% endif %}
                 </div>
             </div>
         </div>
@@ -72,7 +62,7 @@
                     </div>
                     <div class="row product-grid">
 
-                      {% for p in products %}
+                      {% for p in all_products %}
                       <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
                           <div class="product-cart-wrap mb-30">
                               <div class="product-img-action-wrap">
@@ -83,32 +73,19 @@
 
                                       </a>
                                   </div>
-                                  <div class="product-action-1">
-                                      <a aria-label="Add To Wishlist"  class="action-btn add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart"></i></a>
-                                      <!-- <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a> -->
-                                      <a href="{% url 'product-detail' p.pid %}" class="action-btn"><i class="fi-rs-eye"></i></a>
-                                  </div>
                                   <div class="product-badges product-badges-position product-badges-mrg">
                                       {% if p.old_price %}<span class="hot">-{{p.get_precentage|floatformat:0}}%</span>{% endif %}
                                   </div>
                               </div>
                               <div class="product-content-wrap">
                                   <div class="product-category">
-                                      <a href="{% url 'product-detail' p.pid %}">{{ p.category.title }}</a>
+                                      <a href="{% url 'category-product-list' p.category.cid %}">{{ p.category.title }}</a>
                                   </div>
-                                  <h2><a href="shop-product-right.html">{{ p.title }}</a></h2>
-                                  <!-- <div class="product-rate-cover">
-                                      <i class="fas fa-star text-warning"></i>
-                                      <span class="font-small ml-5 text-muted"> ({{ p.reviews.all.count }})</span>
-
-                                  </div>
-                                  <div>
-                                      <span class="font-small text-muted">By <a href="{% url 'vendor-detail' p.vendor.vid %}">{{p.vendor.title}}</a></span>
-                                  </div> -->
+                                  <h2><a href="{% url 'product-detail' p.pid %}">{{ p.title }}</a></h2>
                                   <div class="product-card-bottom">
                                       <div class="product-price">
-                                          <span>$</span> <span class="current-product-price-{{ p.id }}">{{p.price}}</span>
-                                          {% if p.old_price %}<span class="old-price">${{p.old_price}}</span>{% endif %}
+                                          <span class="current-product-price-{{ p.id }}">{{p.price}}</span> TMT<span></span>
+                                          {% if p.old_price %}<span class="old-price">{{p.old_price}} TMT</span>{% endif %}
                                       </div>
                                       <div class="add-cart">
                                           <input type="hidden" value="1" id="product-quantity" class="product-quantity-{{ p.id }}">
@@ -117,7 +94,7 @@
                                           <input type="hidden" class="product-id-{{ p.id }}" value="{{ p.id }}">
                                           <input type="hidden" class="product-title-{{ p.id }}" value="{{ p.title }}">
                                           <div class="d-flex">
-                                              <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>Add</button>
+                                              <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i></button>
                                               <button style="border: none; background: none;" class="add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart" style="fill: aqua;"></i></button>
                                           </div>
                                           <!-- <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>Add</button> -->
@@ -133,17 +110,25 @@
                     <div class="pagination-area mt-20 mb-20">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-start">
+                                {% if all_products.has_previous %}
                                 <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fi-rs-arrow-small-left"></i></a>
+                                    <a class="page-link" href="{% url 'search'  %}?page={{ all_products.previous_page_number }}&q={{title}}&r={{cat}}"><i class="fi-rs-arrow-small-left"></i></a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link dot" href="#">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                {% endif %}
+
+                                {% for page_number in all_products.paginator.page_range %}
+                                {% if all_products.number == page_number %}
+                                <li class="page-item active"><a class="page-link" href="{% url 'search'  %}?page={{ page_number }}&?q={{title}}&?r={{cat}}">{{ page_number }}</a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="{% url 'search'  %}?page={{ page_number }}&q={{title}}&r={{cat}}">{{ page_number }}</a></li>
+                                {% endif %}
+                                {% endfor %}
+                                
+                                {% if all_products.has_next %}
                                 <li class="page-item">
-                                    <a class="page-link" href="#"><i class="fi-rs-arrow-small-right"></i></a>
+                                    <a class="page-link" href="{% url 'search'  %}?page={{ all_products.next_page_number }}&q={{title}}&r={{cat}}"><i class="fi-rs-arrow-small-right"></i></a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </nav>
                     </div>

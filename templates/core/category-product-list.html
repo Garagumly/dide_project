@@ -87,9 +87,9 @@
                                 </div>
                                 <div class="product-content-wrap">
                                     <div class="product-category">
-                                        <a href="{% url 'product-detail' p.pid %}">{{ p.category.title }}</a>
+                                        <a href="{% url 'category-product-list' p.category.cid %}">{{ p.category.title }}</a>
                                     </div>
-                                    <h2><a href="shop-product-right.html">{{ p.title }}</a></h2>
+                                    <h2><a href="{% url 'product-detail' p.pid %}">{{ p.title }}</a></h2>
                                     <!-- <div class="product-rate-cover">
                                         <i class="fas fa-star text-warning"></i>
                                         <span class="font-small ml-5 text-muted"> ({{ p.reviews.all.count }})</span>
@@ -100,8 +100,8 @@
                                     </div> -->
                                     <div class="product-card-bottom">
                                         <div class="product-price">
-                                            <span>$</span> <span class="current-product-price-{{ p.id }}">{{p.price}}</span>
-                                            <span class="old-price">{% if p.old_price %}${{p.old_price}} {% endif %}</span>
+                                            <span class="current-product-price-{{ p.id }}">{{p.price}}</span> TMT<span></span>
+                                            <span class="old-price">{% if p.old_price %}{{p.old_price}} TMT{% endif %}</span>
                                         </div>
                                         <div class="add-cart">
                                             <input type="hidden" value="1" id="product-quantity" class="product-quantity-{{ p.id }}">
@@ -110,7 +110,7 @@
                                             <input type="hidden" class="product-id-{{ p.id }}" value="{{ p.id }}">
                                             <input type="hidden" class="product-title-{{ p.id }}" value="{{ p.title }}">
                                             <div class="d-flex">
-                                                <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>Add</button>
+                                                <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i></button>
                                                 <button style="border: none; background: none;" class="add-to-wishlist" data-product-item="{{p.id}}"><i class="fi-rs-heart" style="fill: aqua;"></i></button>
                                             </div>
                                             <!-- <button class="add add-to-cart-btn" data-index="{{ p.id }}" style="border: none;" id="add-to-cart-btn"><i class="fi-rs-shopping-cart mr-5"></i>Add</button> -->

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 20:03+0500\n"
+"POT-Creation-Date: 2023-12-09 09:34+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,121 +30,257 @@ msgstr ""
 msgid "Turkmen"
 msgstr ""
 
-#: .\templates\core\cart.html:9 .\templates\core\category-product-list.html:13
+#: .\templates\core\about_us.html:9 .\templates\core\async\cart-list.html:8
+#: .\templates\core\async\wishlist-list.html:6
+#: .\templates\core\brand-list.html:9
+#: .\templates\core\brand-product-list.html:9 .\templates\core\cart.html:9
+#: .\templates\core\category-list.html:10
+#: .\templates\core\category-product-list.html:9
 #: .\templates\core\checkout.html:9 .\templates\core\contact.html:9
-#: .\templates\core\dashboard.html:9 .\templates\core\order-detail.html:9
+#: .\templates\core\dashboard.html:9 .\templates\core\deals.html:44
+#: .\templates\core\order-detail.html:9
+#: .\templates\core\payment-completed.html:24
 #: .\templates\core\product-detail.html:16
-#: .\templates\core\product-list.html:44 .\templates\core\search.html:18
-#: .\templates\core\tag.html:13 .\templates\core\vendor-detail.html:9
-#: .\templates\core\vendor-list.html:10 .\templates\core\wishlist.html:10
-#: .\templates\partials\base.html:284 .\templates\partials\base.html:467
+#: .\templates\core\product-list.html:44 .\templates\core\search.html:9
+#: .\templates\core\sub-category-list.html:9 .\templates\core\tag.html:13
+#: .\templates\core\vendor-detail.html:9 .\templates\core\vendor-list.html:10
+#: .\templates\core\wishlist.html:10 .\templates\partials\base.html:157
+#: .\templates\partials\base.html:165 .\templates\partials\base.html:283
+#: .\templates\userauths\profile-edit.html:9
+#: .\templates\userauths\sign-in.html:10 .\templates\userauths\sign-up.html:10
 msgid "Home"
 msgstr ""
 
-#: .\templates\core\cart.html:10 .\templates\partials\base.html:211
+#: .\templates\core\about_us.html:10 .\templates\partials\base.html:196
+msgid "About Us"
+msgstr ""
+
+#: .\templates\core\about_us.html:20
+msgid "Welcome To Dide"
+msgstr ""
+
+#: .\templates\core\about_us.html:35
+msgid "Who we are"
+msgstr ""
+
+#: .\templates\core\about_us.html:39
+msgid "Our history"
+msgstr ""
+
+#: .\templates\core\about_us.html:43
+msgid "Our mission"
+msgstr ""
+
+#: .\templates\core\about_us.html:55
+msgid "Our Partners"
+msgstr ""
+
+#: .\templates\core\async\cart-list.html:9 .\templates\core\cart.html:10
+#: .\templates\partials\base.html:112
 msgid "Cart"
 msgstr ""
 
-#: .\templates\core\cart.html:17
+#: .\templates\core\async\cart-list.html:16 .\templates\core\cart.html:17
 msgid "Your Cart"
 msgstr ""
 
-#: .\templates\core\cart.html:19 .\templates\core\checkout.html:19
-#: .\templates\core\wishlist.html:20
+#: .\templates\core\async\cart-list.html:18 .\templates\core\cart.html:19
+#: .\templates\core\checkout.html:19 .\templates\core\wishlist.html:20
 msgid "There are"
 msgstr ""
 
-#: .\templates\core\cart.html:19 .\templates\core\checkout.html:19
+#: .\templates\core\async\cart-list.html:18 .\templates\core\cart.html:19
+#: .\templates\core\checkout.html:19
 msgid "products in your cart"
 msgstr ""
 
-#: .\templates\core\cart.html:34 .\templates\core\wishlist.html:30
+#: .\templates\core\async\cart-list.html:33
+#: .\templates\core\async\wishlist-list.html:25 .\templates\core\cart.html:34
+#: .\templates\core\wishlist.html:30
 msgid "Product"
 msgstr ""
 
-#: .\templates\core\cart.html:35 .\templates\core\order-detail.html:63
+#: .\templates\core\async\cart-list.html:34 .\templates\core\cart.html:35
+#: .\templates\core\order-detail.html:63
 #: .\templates\core\payment-completed.html:55
 msgid "Title"
 msgstr ""
 
-#: .\templates\core\cart.html:36
+#: .\templates\core\async\cart-list.html:35 .\templates\core\cart.html:36
 msgid "Unit Price"
 msgstr ""
 
-#: .\templates\core\cart.html:37 .\templates\core\payment-completed.html:57
+#: .\templates\core\async\cart-list.html:36 .\templates\core\cart.html:37
+#: .\templates\core\payment-completed.html:57
 msgid "Quantity"
 msgstr ""
 
-#: .\templates\core\cart.html:38 .\templates\core\cart.html:371
-#: .\templates\core\checkout.html:59
+#: .\templates\core\async\cart-list.html:37
+#: .\templates\core\async\cart-list.html:84 .\templates\core\cart.html:38
+#: .\templates\core\cart.html:85 .\templates\core\checkout.html:52
 msgid "Subtotal"
 msgstr ""
 
-#: .\templates\core\cart.html:39
+#: .\templates\core\async\cart-list.html:38 .\templates\core\cart.html:39
 msgid "Refresh"
 msgstr ""
 
-#: .\templates\core\cart.html:40 .\templates\core\wishlist.html:34
+#: .\templates\core\async\cart-list.html:39
+#: .\templates\core\async\wishlist-list.html:29 .\templates\core\cart.html:40
+#: .\templates\core\wishlist.html:34
 msgid "Remove"
 msgstr ""
 
-#: .\templates\core\cart.html:384
+#: .\templates\core\async\cart-list.html:97 .\templates\core\cart.html:98
 msgid "Shipping"
 msgstr ""
 
-#: .\templates\core\cart.html:387
+#: .\templates\core\async\cart-list.html:100 .\templates\core\cart.html:101
 msgid "Free"
 msgstr ""
 
-#: .\templates\core\cart.html:392 .\templates\core\dashboard.html:118
-#: .\templates\core\order-detail.html:66
+#: .\templates\core\async\cart-list.html:105 .\templates\core\cart.html:106
+#: .\templates\core\dashboard.html:120 .\templates\core\order-detail.html:66
 msgid "Total"
 msgstr ""
 
-#: .\templates\core\cart.html:402
+#: .\templates\core\async\cart-list.html:115 .\templates\core\cart.html:116
 msgid "Proceed To CheckOut"
 msgstr ""
 
-#: .\templates\core\category-list.html:12
-#: .\templates\core\category-list.html:49
-msgid "Categories"
+#: .\templates\core\async\wishlist-list.html:7
+#: .\templates\core\product-list.html:45 .\templates\partials\base.html:168
+msgid "Shop"
 msgstr ""
 
-#: .\templates\core\category-list.html:15
-#: .\templates\core\category-list.html:151 .\templates\core\index.html:231
-#: .\templates\core\vendor-detail.html:372 .\templates\partials\base.html:289
-#: .\templates\partials\base.html:470
-msgid "Category"
+#: .\templates\core\async\wishlist-list.html:7
+msgid "Fillter"
 msgstr ""
 
-#: .\templates\core\category-product-list.html:27
-#: .\templates\core\search.html:32 .\templates\core\tag.html:27
-#: .\templates\core\vendor-detail.html:80
-msgid "We found"
+#: .\templates\core\async\wishlist-list.html:15
+#: .\templates\core\wishlist.html:11 .\templates\partials\base.html:105
+msgid "Wishlist"
 msgstr ""
 
-#: .\templates\core\category-product-list.html:27
+#: .\templates\core\async\wishlist-list.html:26
+#: .\templates\core\order-detail.html:64
+#: .\templates\core\payment-completed.html:56 .\templates\core\wishlist.html:31
+msgid "Price"
+msgstr ""
+
+#: .\templates\core\async\wishlist-list.html:27
+#: .\templates\core\wishlist.html:32
+msgid "Stock Status"
+msgstr ""
+
+#: .\templates\core\async\wishlist-list.html:28
+#: .\templates\core\wishlist.html:33
+msgid "Action"
+msgstr ""
+
+#: .\templates\core\async\wishlist-list.html:51
+#: .\templates\core\wishlist.html:56
+msgid "In Stock"
+msgstr ""
+
+#: .\templates\core\async\wishlist-list.html:51
+#: .\templates\core\wishlist.html:56
+msgid "Out of Stock"
+msgstr ""
+
+#: .\templates\core\async\wishlist-list.html:62
+#: .\templates\core\product-detail.html:116 .\templates\core\wishlist.html:67
+msgid "Add to cart"
+msgstr ""
+
+#: .\templates\core\async\wishlist-list.html:71
+#: .\templates\core\wishlist.html:75
+msgid "Nothing in wishlist yet..."
+msgstr ""
+
+#: .\templates\core\brand-list.html:10 .\templates\core\brand-list.html:19
+#: .\templates\core\brand-product-list.html:10
+#: .\templates\partials\base.html:175
+msgid "Brands"
+msgstr ""
+
+#: .\templates\core\brand-product-list.html:20
+#: .\templates\core\category-product-list.html:21
 msgid "items for you"
 msgstr ""
 
+#: .\templates\core\category-list.html:11
+#: .\templates\core\category-product-list.html:10
+#: .\templates\core\product-detail.html:17
+#: .\templates\core\sub-category-list.html:10 .\templates\partials\base.html:63
+#: .\templates\partials\base.html:178
+msgid "All Categories"
+msgstr ""
+
+#: .\templates\core\category-list.html:22
+msgid "Categories"
+msgstr ""
+
+#: .\templates\core\category-list.html:41 .\templates\core\vendor-list.html:55
+msgid "Products"
+msgstr ""
+
+#: .\templates\core\category-list.html:78 .\templates\core\index.html:222
+#: .\templates\core\vendor-detail.html:214 .\templates\partials\base.html:286
+msgid "Category"
+msgstr ""
+
+#: .\templates\core\category-product-list.html:21
+#: .\templates\core\search.html:20 .\templates\core\tag.html:27
+msgid "We found"
+msgstr ""
+
 #: .\templates\core\checkout.html:10 .\templates\core\checkout.html:17
-#: .\templates\partials\base.html:218 .\templates\partials\base.html:419
+#: .\templates\partials\base.html:119 .\templates\partials\base.html:235
 msgid "Checkout"
 msgstr ""
 
-#: .\templates\core\checkout.html:35
+#: .\templates\core\checkout.html:28
 msgid "Billing Details"
 msgstr ""
 
-#: .\templates\core\checkout.html:63
+#: .\templates\core\checkout.html:32
+msgid "First name *"
+msgstr ""
+
+#: .\templates\core\checkout.html:35
+msgid "mobile *"
+msgstr ""
+
+#: .\templates\core\checkout.html:40
+msgid "Address *"
+msgstr ""
+
+#: .\templates\core\checkout.html:51
+msgid "Your Order"
+msgstr ""
+
+#: .\templates\core\checkout.html:56
 msgid "Go back to Cart"
 msgstr ""
 
-#: .\templates\core\checkout.html:118
+#: .\templates\core\checkout.html:85
+msgid "Payment"
+msgstr ""
+
+#: .\templates\core\checkout.html:93
+msgid "Cash on delivery"
+msgstr ""
+
+#: .\templates\core\checkout.html:97
+msgid "Card on delivery"
+msgstr ""
+
+#: .\templates\core\checkout.html:111
 msgid "Make Payment"
 msgstr ""
 
-#: .\templates\core\contact.html:10 .\templates\partials\base.html:380
+#: .\templates\core\contact.html:10 .\templates\partials\base.html:193
 msgid "Contact"
 msgstr ""
 
@@ -165,11 +301,11 @@ msgid "Send message"
 msgstr ""
 
 #: .\templates\core\dashboard.html:23
+#: .\templates\userauths\profile-edit.html:23
 msgid "Profile"
 msgstr ""
 
 #: .\templates\core\dashboard.html:26 .\templates\core\order-detail.html:23
-#: .\templates\core\payment-completed.html:24
 msgid "Dashboard"
 msgstr ""
 
@@ -185,149 +321,160 @@ msgstr ""
 msgid "Account details"
 msgstr ""
 
-#: .\templates\core\dashboard.html:41 .\templates\core\order-detail.html:30
+#: .\templates\core\dashboard.html:42 .\templates\core\order-detail.html:30
+#: .\templates\userauths\profile-edit.html:27
 msgid "Logout"
 msgstr ""
 
-#: .\templates\core\dashboard.html:51
+#: .\templates\core\dashboard.html:53
 msgid "My Profile"
 msgstr ""
 
-#: .\templates\core\dashboard.html:69
+#: .\templates\core\dashboard.html:71
 msgid "Verified"
 msgstr ""
 
-#: .\templates\core\dashboard.html:73
+#: .\templates\core\dashboard.html:75
 msgid "Not verified"
 msgstr ""
 
-#: .\templates\core\dashboard.html:77
+#: .\templates\core\dashboard.html:79
 msgid "Edit Profile"
 msgstr ""
 
-#: .\templates\core\dashboard.html:87
+#: .\templates\core\dashboard.html:89
 msgid "Hello"
 msgstr ""
 
-#: .\templates\core\dashboard.html:107 .\templates\core\order-detail.html:54
+#: .\templates\core\dashboard.html:109 .\templates\core\order-detail.html:54
 msgid "Your Orders"
 msgstr ""
 
-#: .\templates\core\dashboard.html:114
+#: .\templates\core\dashboard.html:116
 msgid "Order"
 msgstr ""
 
-#: .\templates\core\dashboard.html:115
+#: .\templates\core\dashboard.html:117
 msgid "Date"
 msgstr ""
 
-#: .\templates\core\dashboard.html:116
+#: .\templates\core\dashboard.html:118
 msgid "Status"
 msgstr ""
 
-#: .\templates\core\dashboard.html:117
+#: .\templates\core\dashboard.html:119
 msgid "Paid Status"
 msgstr ""
 
-#: .\templates\core\dashboard.html:119
+#: .\templates\core\dashboard.html:121
 msgid "Actions"
 msgstr ""
 
-#: .\templates\core\dashboard.html:136
+#: .\templates\core\dashboard.html:138
 msgid "View"
 msgstr ""
 
-#: .\templates\core\dashboard.html:175
+#: .\templates\core\dashboard.html:177
 msgid "Add Address"
 msgstr ""
 
-#: .\templates\core\dashboard.html:185
+#: .\templates\core\dashboard.html:187
 msgid "Save Address"
 msgstr ""
 
-#: .\templates\core\dashboard.html:197 .\templates\core\product-detail.html:263
-#: .\templates\core\product-detail.html:541
-#: .\templates\core\vendor-list.html:112 .\templates\partials\base.html:662
+#: .\templates\core\dashboard.html:199 .\templates\core\product-detail.html:265
+#: .\templates\core\product-detail.html:530
+#: .\templates\core\vendor-list.html:72 .\templates\partials\base.html:365
 msgid "Address"
 msgstr ""
 
-#: .\templates\core\dashboard.html:232 .\templates\core\order-detail.html:153
+#: .\templates\core\dashboard.html:234 .\templates\core\order-detail.html:153
 msgid "Account Details"
 msgstr ""
 
-#: .\templates\core\dashboard.html:235
+#: .\templates\core\dashboard.html:237
 msgid "Log in instead"
 msgstr ""
 
-#: .\templates\core\dashboard.html:239 .\templates\core\order-detail.html:160
+#: .\templates\core\dashboard.html:241 .\templates\core\order-detail.html:160
 msgid "First Name"
 msgstr ""
 
-#: .\templates\core\dashboard.html:243 .\templates\core\order-detail.html:164
+#: .\templates\core\dashboard.html:245 .\templates\core\order-detail.html:164
 msgid "Last Name"
 msgstr ""
 
-#: .\templates\core\dashboard.html:247 .\templates\core\order-detail.html:168
+#: .\templates\core\dashboard.html:249 .\templates\core\order-detail.html:168
 msgid "Display Name"
 msgstr ""
 
-#: .\templates\core\dashboard.html:251 .\templates\core\order-detail.html:172
+#: .\templates\core\dashboard.html:253 .\templates\core\order-detail.html:172
 msgid "Email Address"
 msgstr ""
 
-#: .\templates\core\dashboard.html:255 .\templates\core\order-detail.html:176
+#: .\templates\core\dashboard.html:257 .\templates\core\order-detail.html:176
 msgid "Current Password"
 msgstr ""
 
-#: .\templates\core\dashboard.html:259 .\templates\core\order-detail.html:180
+#: .\templates\core\dashboard.html:261 .\templates\core\order-detail.html:180
 msgid "New Password"
 msgstr ""
 
-#: .\templates\core\dashboard.html:263 .\templates\core\order-detail.html:184
+#: .\templates\core\dashboard.html:265 .\templates\core\order-detail.html:184
 msgid "Confirm Password"
+msgstr ""
+
+#: .\templates\core\deals.html:45 .\templates\partials\base.html:163
+msgid "Deals"
+msgstr ""
+
+#: .\templates\core\deals.html:54 .\templates\core\index.html:126
+msgid "Deals Of The Day"
+msgstr ""
+
+#: .\templates\core\index.html:26
+msgid "Popular Products"
 msgstr ""
 
 #: .\templates\core\index.html:29
 msgid "All Products"
 msgstr ""
 
-#: .\templates\core\index.html:135 .\templates\core\search.html:154
-msgid "Deals Of The Day"
-msgstr ""
-
-#: .\templates\core\index.html:137
+#: .\templates\core\index.html:128
 msgid "All Deals"
 msgstr ""
 
-#: .\templates\core\index.html:282
+#: .\templates\core\index.html:273
 msgid "New products"
 msgstr ""
 
-#: .\templates\core\index.html:317
-msgid "Shop by Vendors"
+#: .\templates\core\index.html:309
+msgid "Shop by Brand"
 msgstr ""
 
-#: .\templates\core\index.html:319
-msgid "All Vendors"
+#: .\templates\core\index.html:311
+msgid "All Brands"
 msgstr ""
 
-#: .\templates\core\index.html:346
+#: .\templates\core\index.html:338
 msgid "Top Selling"
 msgstr ""
 
-#: .\templates\core\index.html:376
+#: .\templates\core\index.html:362
 msgid "Trending Products"
 msgstr ""
 
-#: .\templates\core\index.html:406
+#: .\templates\core\index.html:386
 msgid "Recently added"
 msgstr ""
 
-#: .\templates\core\index.html:436
+#: .\templates\core\index.html:410
 msgid "Top Rated"
 msgstr ""
 
-#: .\templates\core\order-detail.html:10 .\templates\partials\base.html:230
+#: .\templates\core\order-detail.html:10 .\templates\partials\base.html:131
+#: .\templates\userauths\profile-edit.html:10
+#: .\templates\userauths\sign-in.html:11 .\templates\userauths\sign-up.html:11
 msgid "My Account"
 msgstr ""
 
@@ -337,11 +484,6 @@ msgstr ""
 
 #: .\templates\core\order-detail.html:62
 msgid "Image"
-msgstr ""
-
-#: .\templates\core\order-detail.html:64
-#: .\templates\core\payment-completed.html:56 .\templates\core\wishlist.html:31
-msgid "Price"
 msgstr ""
 
 #: .\templates\core\order-detail.html:65
@@ -364,7 +506,7 @@ msgstr ""
 msgid "Track"
 msgstr ""
 
-#: .\templates\core\order-detail.html:156
+#: .\templates\core\order-detail.html:156 .\templates\userauths\sign-up.html:33
 msgid "Already have an account?"
 msgstr ""
 
@@ -372,134 +514,150 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:76
+#: .\templates\core\payment-completed.html:77
 msgid "SubTotal"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:84
+#: .\templates\core\payment-completed.html:81
 msgid "Grand Total"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:94
+#: .\templates\core\payment-completed.html:91
 msgid "Invoice for"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:96
-msgid "Invoice To"
-msgstr ""
-
-#: .\templates\core\payment-completed.html:100
+#: .\templates\core\payment-completed.html:97
 msgid "Total Amount"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:102
-msgid "Taxes Included"
-msgstr ""
-
-#: .\templates\core\payment-completed.html:107
+#: .\templates\core\payment-completed.html:103
 msgid "Thanks for our shopping at"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:112
+#: .\templates\core\payment-completed.html:108
 msgid "Print"
 msgstr ""
 
-#: .\templates\core\payment-completed.html:113
+#: .\templates\core\payment-completed.html:109
 msgid "Download"
 msgstr ""
 
-#: .\templates\core\product-detail.html:17
-#: .\templates\core\product-list.html:45 .\templates\partials\base.html:301
-msgid "Shop"
-msgstr ""
-
-#: .\templates\core\product-detail.html:137
-msgid "Description"
-msgstr ""
-
-#: .\templates\core\product-detail.html:143
-#: .\templates\core\product-detail.html:525
-msgid "Vendor"
-msgstr ""
-
-#: .\templates\core\product-detail.html:146
-msgid "Reviews"
-msgstr ""
-
-#: .\templates\core\product-detail.html:258
+#: .\templates\core\product-detail.html:66
+#: .\templates\core\product-detail.html:260
 msgid "reviews"
 msgstr ""
 
-#: .\templates\core\product-detail.html:264
-#: .\templates\core\product-detail.html:542
+#: .\templates\core\product-detail.html:123
+msgid "Type"
+msgstr ""
+
+#: .\templates\core\product-detail.html:124
+msgid "Brand"
+msgstr ""
+
+#: .\templates\core\product-detail.html:128
+msgid "Stock"
+msgstr ""
+
+#: .\templates\core\product-detail.html:128
+msgid "Items In Stock"
+msgstr ""
+
+#: .\templates\core\product-detail.html:139
+msgid "Description"
+msgstr ""
+
+#: .\templates\core\product-detail.html:145
+#: .\templates\core\product-detail.html:515
+msgid "Vendor"
+msgstr ""
+
+#: .\templates\core\product-detail.html:148
+msgid "Reviews"
+msgstr ""
+
+#: .\templates\core\product-detail.html:266
+#: .\templates\core\product-detail.html:531
 msgid "Contact Seller"
 msgstr ""
 
-#: .\templates\core\product-detail.html:268
-#: .\templates\core\product-detail.html:547
+#: .\templates\core\product-detail.html:270
+#: .\templates\core\product-detail.html:536
 msgid "Rating"
 msgstr ""
 
-#: .\templates\core\product-detail.html:272
-#: .\templates\core\product-detail.html:551
+#: .\templates\core\product-detail.html:274
+#: .\templates\core\product-detail.html:540
 msgid "Ship on time"
 msgstr ""
 
-#: .\templates\core\product-detail.html:276
-#: .\templates\core\product-detail.html:555
+#: .\templates\core\product-detail.html:278
+#: .\templates\core\product-detail.html:544
 msgid "Chat response"
 msgstr ""
 
-#: .\templates\core\product-detail.html:287
+#: .\templates\core\product-detail.html:289
 msgid "Customer questions & answers"
 msgstr ""
 
-#: .\templates\core\product-detail.html:316
+#: .\templates\core\product-detail.html:318
 msgid "Customer reviews"
 msgstr ""
 
-#: .\templates\core\product-detail.html:325
+#: .\templates\core\product-detail.html:327
 msgid "out of"
 msgstr ""
 
-#: .\templates\core\product-detail.html:408
+#: .\templates\core\product-detail.html:357
+msgid "Add a review"
+msgstr ""
+
+#: .\templates\core\product-detail.html:395
+msgid "Submit Review"
+msgstr ""
+
+#: .\templates\core\product-detail.html:410
 msgid "Related products"
 msgstr ""
 
-#: .\templates\core\product-detail.html:491
+#: .\templates\core\product-detail.html:481
 msgid "Delivery"
 msgstr ""
 
-#: .\templates\core\product-detail.html:499
+#: .\templates\core\product-detail.html:489
 msgid "Verified Address"
 msgstr ""
 
-#: .\templates\core\product-detail.html:501
+#: .\templates\core\product-detail.html:491
 msgid "Unverified Address"
 msgstr ""
 
-#: .\templates\core\product-detail.html:504
+#: .\templates\core\product-detail.html:494
 msgid "Change"
 msgstr ""
 
-#: .\templates\core\product-detail.html:508
+#: .\templates\core\product-detail.html:498
 msgid "Return & Warranty"
 msgstr ""
 
-#: .\templates\core\product-detail.html:512
+#: .\templates\core\product-detail.html:502
 msgid "Authentic"
 msgstr ""
 
-#: .\templates\core\product-detail.html:516
-msgid " Days Return"
+#: .\templates\core\product-detail.html:506
+msgid "Days Return"
 msgstr ""
 
-#: .\templates\core\product-detail.html:520
+#: .\templates\core\product-detail.html:510
 msgid "Months Warranty"
 msgstr ""
 
-#: .\templates\core\product-detail.html:562
+#: .\templates\core\product-detail.html:551
 msgid "Register now"
+msgstr ""
+
+#: .\templates\core\product-list.html:54
+msgid "Filters"
 msgstr ""
 
 #: .\templates\core\product-list.html:62
@@ -511,34 +669,50 @@ msgid "By Vendors"
 msgstr ""
 
 #: .\templates\core\product-list.html:93
+msgid "By Type"
+msgstr ""
+
+#: .\templates\core\product-list.html:108
 msgid "Popular Tags"
 msgstr ""
 
-#: .\templates\core\product-list.html:121
+#: .\templates\core\product-list.html:122
+msgid "By Price"
+msgstr ""
+
+#: .\templates\core\product-list.html:132
+msgid "Current Price"
+msgstr ""
+
+#: .\templates\core\product-list.html:136
 msgid "Filter"
 msgstr ""
 
-#: .\templates\core\search.html:14
-msgid "No Searched Item"
+#: .\templates\core\product-list.html:148
+msgid "items"
 msgstr ""
 
-#: .\templates\core\search.html:32 .\templates\core\tag.html:27
+#: .\templates\core\search.html:10
+msgid "Search for items"
+msgstr ""
+
+#: .\templates\core\search.html:20 .\templates\core\tag.html:27
 msgid "item for you!"
 msgstr ""
 
-#: .\templates\core\tag.html:103
+#: .\templates\core\tag.html:98
 msgid "By"
 msgstr ""
 
-#: .\templates\core\vendor-detail.html:22 .\templates\core\vendor-list.html:101
+#: .\templates\core\vendor-detail.html:22 .\templates\core\vendor-list.html:61
 msgid "Since"
 msgstr ""
 
-#: .\templates\core\vendor-detail.html:47
+#: .\templates\core\vendor-detail.html:46
 msgid "Follow Us"
 msgstr ""
 
-#: .\templates\core\vendor-detail.html:80
+#: .\templates\core\vendor-detail.html:79
 msgid "items for you!"
 msgstr ""
 
@@ -546,16 +720,17 @@ msgstr ""
 msgid "Vendors List"
 msgstr ""
 
-#: .\templates\core\vendor-list.html:95
-msgid "Products"
+#: .\templates\core\vendor-list.html:36 .\templates\partials\base.html:172
+#: .\templates\partials\base.html:301
+msgid "Vendors"
 msgstr ""
 
-#: .\templates\core\vendor-list.html:118
+#: .\templates\core\vendor-list.html:73 .\templates\partials\base.html:371
+msgid "Call Us"
+msgstr ""
+
+#: .\templates\core\vendor-list.html:78
 msgid "Visit Store"
-msgstr ""
-
-#: .\templates\core\wishlist.html:11 .\templates\partials\base.html:204
-msgid "Wishlist"
 msgstr ""
 
 #: .\templates\core\wishlist.html:19
@@ -566,96 +741,101 @@ msgstr ""
 msgid "products in this list"
 msgstr ""
 
-#: .\templates\core\wishlist.html:32
-msgid "Stock Status"
-msgstr ""
-
-#: .\templates\core\wishlist.html:33
-msgid "Action"
-msgstr ""
-
-#: .\templates\core\wishlist.html:56
-msgid "In Stock"
-msgstr ""
-
-#: .\templates\core\wishlist.html:56
-msgid "Out of Stock"
-msgstr ""
-
-#: .\templates\core\wishlist.html:67
-msgid "Add to cart"
-msgstr ""
-
-#: .\templates\core\wishlist.html:75
-msgid "Nothing in wishlist yet..."
-msgstr ""
-
-#: .\templates\partials\base.html:167
+#: .\templates\partials\base.html:68
 msgid "Search for items..."
 msgstr ""
 
-#: .\templates\partials\base.html:217 .\templates\partials\base.html:418
+#: .\templates\partials\base.html:118 .\templates\partials\base.html:234
 msgid "View cart"
 msgstr ""
 
-#: .\templates\partials\base.html:227
+#: .\templates\partials\base.html:128
 msgid "Account"
 msgstr ""
 
-#: .\templates\partials\base.html:231
-msgid "Admin Dashboard"
-msgstr ""
-
-#: .\templates\partials\base.html:234
+#: .\templates\partials\base.html:132
 msgid "My Wishlist"
 msgstr ""
 
-#: .\templates\partials\base.html:235
+#: .\templates\partials\base.html:133
 msgid "Setting"
 msgstr ""
 
-#: .\templates\partials\base.html:237
+#: .\templates\partials\base.html:135
 msgid "Sign out"
 msgstr ""
 
-#: .\templates\partials\base.html:259 .\templates\partials\base.html:295
-msgid "All Categories"
+#: .\templates\partials\base.html:137
+msgid "Sign In"
 msgstr ""
 
-#: .\templates\partials\base.html:282
-msgid "Акции"
-msgstr ""
-
-#: .\templates\partials\base.html:305 .\templates\partials\base.html:478
-msgid "Vendors"
-msgstr ""
-
-#: .\templates\partials\base.html:388
+#: .\templates\partials\base.html:204
 msgid "Support Center"
 msgstr ""
 
-#: .\templates\partials\base.html:458
+#: .\templates\partials\base.html:274
 msgid "Search for items…"
 msgstr ""
 
-#: .\templates\partials\base.html:514
+#: .\templates\partials\base.html:304
 msgid "Language"
 msgstr ""
 
-#: .\templates\partials\base.html:530
+#: .\templates\partials\base.html:320
 msgid "Log In / Sign Up"
 msgstr ""
 
-#: .\templates\partials\base.html:544 .\templates\partials\base.html:655
+#: .\templates\partials\base.html:334 .\templates\partials\base.html:358
 msgid "All rights reserved"
 msgstr ""
 
-#: .\templates\partials\base.html:668
-msgid "Call Us"
+#: .\templates\partials\base.html:386
+msgid "Hours"
 msgstr ""
 
-#: .\templates\partials\base.html:683
-msgid "Hours"
+#: .\templates\userauths\profile-edit.html:10
+#: .\templates\userauths\sign-in.html:11 .\templates\userauths\sign-up.html:11
+msgid "Pages"
+msgstr ""
+
+#: .\templates\userauths\profile-edit.html:37
+msgid "Update Profile"
+msgstr ""
+
+#: .\templates\userauths\profile-edit.html:68
+msgid "Save Changes"
+msgstr ""
+
+#: .\templates\userauths\sign-in.html:27 .\templates\userauths\sign-up.html:33
+msgid "Login"
+msgstr ""
+
+#: .\templates\userauths\sign-in.html:28
+msgid "Don't have an account?"
+msgstr ""
+
+#: .\templates\userauths\sign-in.html:28
+msgid "Create here"
+msgstr ""
+
+#: .\templates\userauths\sign-in.html:43
+msgid "Remember me"
+msgstr ""
+
+#: .\templates\userauths\sign-in.html:46
+msgid "Forgot password?"
+msgstr ""
+
+#: .\templates\userauths\sign-in.html:49
+msgid "Log in"
+msgstr ""
+
+#: .\templates\userauths\sign-up.html:32
+msgid "Create an Account"
+msgstr ""
+
+#: .\templates\userauths\sign-up.html:51
+msgid "Submit"
 msgstr ""
 
 #~ msgid "poisk"

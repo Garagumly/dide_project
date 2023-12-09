@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-07 20:03+0500\n"
+"POT-Creation-Date: 2023-12-09 09:34+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,633 +30,819 @@ msgstr ""
 msgid "Turkmen"
 msgstr ""
 
-#: .\templates\core\cart.html:9 .\templates\core\category-product-list.html:13
+#: .\templates\core\about_us.html:9 .\templates\core\async\cart-list.html:8
+#: .\templates\core\async\wishlist-list.html:6
+#: .\templates\core\brand-list.html:9
+#: .\templates\core\brand-product-list.html:9 .\templates\core\cart.html:9
+#: .\templates\core\category-list.html:10
+#: .\templates\core\category-product-list.html:9
 #: .\templates\core\checkout.html:9 .\templates\core\contact.html:9
-#: .\templates\core\dashboard.html:9 .\templates\core\order-detail.html:9
+#: .\templates\core\dashboard.html:9 .\templates\core\deals.html:44
+#: .\templates\core\order-detail.html:9
+#: .\templates\core\payment-completed.html:24
 #: .\templates\core\product-detail.html:16
-#: .\templates\core\product-list.html:44 .\templates\core\search.html:18
-#: .\templates\core\tag.html:13 .\templates\core\vendor-detail.html:9
-#: .\templates\core\vendor-list.html:10 .\templates\core\wishlist.html:10
-#: .\templates\partials\base.html:284 .\templates\partials\base.html:467
+#: .\templates\core\product-list.html:44 .\templates\core\search.html:9
+#: .\templates\core\sub-category-list.html:9 .\templates\core\tag.html:13
+#: .\templates\core\vendor-detail.html:9 .\templates\core\vendor-list.html:10
+#: .\templates\core\wishlist.html:10 .\templates\partials\base.html:157
+#: .\templates\partials\base.html:165 .\templates\partials\base.html:283
+#: .\templates\userauths\profile-edit.html:9
+#: .\templates\userauths\sign-in.html:10 .\templates\userauths\sign-up.html:10
 msgid "Home"
-msgstr ""
+msgstr "Esasy"
 
-#: .\templates\core\cart.html:10 .\templates\partials\base.html:211
+#: .\templates\core\about_us.html:10 .\templates\partials\base.html:196
+msgid "About Us"
+msgstr "Biz Barada"
+
+#: .\templates\core\about_us.html:20
+msgid "Welcome To Dide"
+msgstr "Dide - Hoşgeldiňiz"
+
+#: .\templates\core\about_us.html:35
+msgid "Who we are"
+msgstr "Biz Kim"
+
+#: .\templates\core\about_us.html:39
+msgid "Our history"
+msgstr "Taryhymyz"
+
+#: .\templates\core\about_us.html:43
+msgid "Our mission"
+msgstr "Maksadymyz"
+
+#: .\templates\core\about_us.html:55
+msgid "Our Partners"
+msgstr "Hyzmatdaşlar"
+
+#: .\templates\core\async\cart-list.html:9 .\templates\core\cart.html:10
+#: .\templates\partials\base.html:112
 msgid "Cart"
-msgstr ""
+msgstr "Sebet"
 
-#: .\templates\core\cart.html:17
+#: .\templates\core\async\cart-list.html:16 .\templates\core\cart.html:17
 msgid "Your Cart"
-msgstr ""
+msgstr "Sebedim"
 
-#: .\templates\core\cart.html:19 .\templates\core\checkout.html:19
-#: .\templates\core\wishlist.html:20
+#: .\templates\core\async\cart-list.html:18 .\templates\core\cart.html:19
+#: .\templates\core\checkout.html:19 .\templates\core\wishlist.html:20
 msgid "There are"
-msgstr ""
+msgstr "Sebetde"
 
-#: .\templates\core\cart.html:19 .\templates\core\checkout.html:19
+#: .\templates\core\async\cart-list.html:18 .\templates\core\cart.html:19
+#: .\templates\core\checkout.html:19
 msgid "products in your cart"
-msgstr ""
+msgstr "sany haryt"
 
-#: .\templates\core\cart.html:34 .\templates\core\wishlist.html:30
+#: .\templates\core\async\cart-list.html:33
+#: .\templates\core\async\wishlist-list.html:25 .\templates\core\cart.html:34
+#: .\templates\core\wishlist.html:30
 msgid "Product"
-msgstr ""
+msgstr "Haryt"
 
-#: .\templates\core\cart.html:35 .\templates\core\order-detail.html:63
+#: .\templates\core\async\cart-list.html:34 .\templates\core\cart.html:35
+#: .\templates\core\order-detail.html:63
 #: .\templates\core\payment-completed.html:55
 msgid "Title"
-msgstr ""
+msgstr "Ady"
 
-#: .\templates\core\cart.html:36
+#: .\templates\core\async\cart-list.html:35 .\templates\core\cart.html:36
 msgid "Unit Price"
-msgstr ""
+msgstr "Bahasy"
 
-#: .\templates\core\cart.html:37 .\templates\core\payment-completed.html:57
+#: .\templates\core\async\cart-list.html:36 .\templates\core\cart.html:37
+#: .\templates\core\payment-completed.html:57
 msgid "Quantity"
-msgstr ""
+msgstr "Mukdary"
 
-#: .\templates\core\cart.html:38 .\templates\core\cart.html:371
-#: .\templates\core\checkout.html:59
+#: .\templates\core\async\cart-list.html:37
+#: .\templates\core\async\cart-list.html:84 .\templates\core\cart.html:38
+#: .\templates\core\cart.html:85 .\templates\core\checkout.html:52
 msgid "Subtotal"
-msgstr ""
+msgstr "Jemi"
 
-#: .\templates\core\cart.html:39
+#: .\templates\core\async\cart-list.html:38 .\templates\core\cart.html:39
 msgid "Refresh"
-msgstr ""
+msgstr "Täzele"
 
-#: .\templates\core\cart.html:40 .\templates\core\wishlist.html:34
+#: .\templates\core\async\cart-list.html:39
+#: .\templates\core\async\wishlist-list.html:29 .\templates\core\cart.html:40
+#: .\templates\core\wishlist.html:34
 msgid "Remove"
-msgstr ""
+msgstr "Poz"
 
-#: .\templates\core\cart.html:384
+#: .\templates\core\async\cart-list.html:97 .\templates\core\cart.html:98
 msgid "Shipping"
-msgstr ""
+msgstr "Eltmek"
 
-#: .\templates\core\cart.html:387
+#: .\templates\core\async\cart-list.html:100 .\templates\core\cart.html:101
 msgid "Free"
-msgstr ""
+msgstr "Mugt"
 
-#: .\templates\core\cart.html:392 .\templates\core\dashboard.html:118
-#: .\templates\core\order-detail.html:66
+#: .\templates\core\async\cart-list.html:105 .\templates\core\cart.html:106
+#: .\templates\core\dashboard.html:120 .\templates\core\order-detail.html:66
 msgid "Total"
-msgstr ""
+msgstr "Jemi"
 
-#: .\templates\core\cart.html:402
+#: .\templates\core\async\cart-list.html:115 .\templates\core\cart.html:116
 msgid "Proceed To CheckOut"
-msgstr ""
+msgstr "Tölege geçmek"
 
-#: .\templates\core\category-list.html:12
-#: .\templates\core\category-list.html:49
-msgid "Categories"
-msgstr ""
+#: .\templates\core\async\wishlist-list.html:7
+#: .\templates\core\product-list.html:45 .\templates\partials\base.html:168
+msgid "Shop"
+msgstr "Harytlar"
 
-#: .\templates\core\category-list.html:15
-#: .\templates\core\category-list.html:151 .\templates\core\index.html:231
-#: .\templates\core\vendor-detail.html:372 .\templates\partials\base.html:289
-#: .\templates\partials\base.html:470
-msgid "Category"
-msgstr ""
+#: .\templates\core\async\wishlist-list.html:7
+msgid "Fillter"
+msgstr "Filter"
 
-#: .\templates\core\category-product-list.html:27
-#: .\templates\core\search.html:32 .\templates\core\tag.html:27
-#: .\templates\core\vendor-detail.html:80
-msgid "We found"
-msgstr ""
+#: .\templates\core\async\wishlist-list.html:15
+#: .\templates\core\wishlist.html:11 .\templates\partials\base.html:105
+msgid "Wishlist"
+msgstr "Saýlanan"
 
-#: .\templates\core\category-product-list.html:27
-msgid "items for you"
-msgstr ""
-
-#: .\templates\core\checkout.html:10 .\templates\core\checkout.html:17
-#: .\templates\partials\base.html:218 .\templates\partials\base.html:419
-msgid "Checkout"
-msgstr ""
-
-#: .\templates\core\checkout.html:35
-msgid "Billing Details"
-msgstr ""
-
-#: .\templates\core\checkout.html:63
-msgid "Go back to Cart"
-msgstr ""
-
-#: .\templates\core\checkout.html:118
-msgid "Make Payment"
-msgstr ""
-
-#: .\templates\core\contact.html:10 .\templates\partials\base.html:380
-msgid "Contact"
-msgstr ""
-
-#: .\templates\core\contact.html:87
-msgid "Contact form"
-msgstr ""
-
-#: .\templates\core\contact.html:88
-msgid "Drop Us a Line"
-msgstr ""
-
-#: .\templates\core\contact.html:89
-msgid "Your email address will not be published. Required fields are marked *"
-msgstr ""
-
-#: .\templates\core\contact.html:118
-msgid "Send message"
-msgstr ""
-
-#: .\templates\core\dashboard.html:23
-msgid "Profile"
-msgstr ""
-
-#: .\templates\core\dashboard.html:26 .\templates\core\order-detail.html:23
-#: .\templates\core\payment-completed.html:24
-msgid "Dashboard"
-msgstr ""
-
-#: .\templates\core\dashboard.html:29
-msgid "Orders"
-msgstr ""
-
-#: .\templates\core\dashboard.html:35
-msgid "My Address"
-msgstr ""
-
-#: .\templates\core\dashboard.html:38
-msgid "Account details"
-msgstr ""
-
-#: .\templates\core\dashboard.html:41 .\templates\core\order-detail.html:30
-msgid "Logout"
-msgstr ""
-
-#: .\templates\core\dashboard.html:51
-msgid "My Profile"
-msgstr ""
-
-#: .\templates\core\dashboard.html:69
-msgid "Verified"
-msgstr ""
-
-#: .\templates\core\dashboard.html:73
-msgid "Not verified"
-msgstr ""
-
-#: .\templates\core\dashboard.html:77
-msgid "Edit Profile"
-msgstr ""
-
-#: .\templates\core\dashboard.html:87
-msgid "Hello"
-msgstr ""
-
-#: .\templates\core\dashboard.html:107 .\templates\core\order-detail.html:54
-msgid "Your Orders"
-msgstr ""
-
-#: .\templates\core\dashboard.html:114
-msgid "Order"
-msgstr ""
-
-#: .\templates\core\dashboard.html:115
-msgid "Date"
-msgstr ""
-
-#: .\templates\core\dashboard.html:116
-msgid "Status"
-msgstr ""
-
-#: .\templates\core\dashboard.html:117
-msgid "Paid Status"
-msgstr ""
-
-#: .\templates\core\dashboard.html:119
-msgid "Actions"
-msgstr ""
-
-#: .\templates\core\dashboard.html:136
-msgid "View"
-msgstr ""
-
-#: .\templates\core\dashboard.html:175
-msgid "Add Address"
-msgstr ""
-
-#: .\templates\core\dashboard.html:185
-msgid "Save Address"
-msgstr ""
-
-#: .\templates\core\dashboard.html:197 .\templates\core\product-detail.html:263
-#: .\templates\core\product-detail.html:541
-#: .\templates\core\vendor-list.html:112 .\templates\partials\base.html:662
-msgid "Address"
-msgstr ""
-
-#: .\templates\core\dashboard.html:232 .\templates\core\order-detail.html:153
-msgid "Account Details"
-msgstr ""
-
-#: .\templates\core\dashboard.html:235
-msgid "Log in instead"
-msgstr ""
-
-#: .\templates\core\dashboard.html:239 .\templates\core\order-detail.html:160
-msgid "First Name"
-msgstr ""
-
-#: .\templates\core\dashboard.html:243 .\templates\core\order-detail.html:164
-msgid "Last Name"
-msgstr ""
-
-#: .\templates\core\dashboard.html:247 .\templates\core\order-detail.html:168
-msgid "Display Name"
-msgstr ""
-
-#: .\templates\core\dashboard.html:251 .\templates\core\order-detail.html:172
-msgid "Email Address"
-msgstr ""
-
-#: .\templates\core\dashboard.html:255 .\templates\core\order-detail.html:176
-msgid "Current Password"
-msgstr ""
-
-#: .\templates\core\dashboard.html:259 .\templates\core\order-detail.html:180
-msgid "New Password"
-msgstr ""
-
-#: .\templates\core\dashboard.html:263 .\templates\core\order-detail.html:184
-msgid "Confirm Password"
-msgstr ""
-
-#: .\templates\core\index.html:29
-msgid "All Products"
-msgstr ""
-
-#: .\templates\core\index.html:135 .\templates\core\search.html:154
-msgid "Deals Of The Day"
-msgstr ""
-
-#: .\templates\core\index.html:137
-msgid "All Deals"
-msgstr ""
-
-#: .\templates\core\index.html:282
-msgid "New products"
-msgstr ""
-
-#: .\templates\core\index.html:317
-msgid "Shop by Vendors"
-msgstr ""
-
-#: .\templates\core\index.html:319
-msgid "All Vendors"
-msgstr ""
-
-#: .\templates\core\index.html:346
-msgid "Top Selling"
-msgstr ""
-
-#: .\templates\core\index.html:376
-msgid "Trending Products"
-msgstr ""
-
-#: .\templates\core\index.html:406
-msgid "Recently added"
-msgstr ""
-
-#: .\templates\core\index.html:436
-msgid "Top Rated"
-msgstr ""
-
-#: .\templates\core\order-detail.html:10 .\templates\partials\base.html:230
-msgid "My Account"
-msgstr ""
-
-#: .\templates\core\order-detail.html:61
-msgid "Order INV"
-msgstr ""
-
-#: .\templates\core\order-detail.html:62
-msgid "Image"
-msgstr ""
-
+#: .\templates\core\async\wishlist-list.html:26
 #: .\templates\core\order-detail.html:64
 #: .\templates\core\payment-completed.html:56 .\templates\core\wishlist.html:31
 msgid "Price"
-msgstr ""
+msgstr "Baha"
+
+#: .\templates\core\async\wishlist-list.html:27
+#: .\templates\core\wishlist.html:32
+msgid "Stock Status"
+msgstr "Stok ýagdaýy"
+
+#: .\templates\core\async\wishlist-list.html:28
+#: .\templates\core\wishlist.html:33
+msgid "Action"
+msgstr "Hereket"
+
+#: .\templates\core\async\wishlist-list.html:51
+#: .\templates\core\wishlist.html:56
+msgid "In Stock"
+msgstr "Stokda"
+
+#: .\templates\core\async\wishlist-list.html:51
+#: .\templates\core\wishlist.html:56
+msgid "Out of Stock"
+msgstr "Gutardy"
+
+#: .\templates\core\async\wishlist-list.html:62
+#: .\templates\core\product-detail.html:116 .\templates\core\wishlist.html:67
+msgid "Add to cart"
+msgstr "Sebede goş"
+
+#: .\templates\core\async\wishlist-list.html:71
+#: .\templates\core\wishlist.html:75
+msgid "Nothing in wishlist yet..."
+msgstr "Saýlanan haryt ýok"
+
+#: .\templates\core\brand-list.html:10 .\templates\core\brand-list.html:19
+#: .\templates\core\brand-product-list.html:10
+#: .\templates\partials\base.html:175
+msgid "Brands"
+msgstr "Brend"
+
+#: .\templates\core\brand-product-list.html:20
+#: .\templates\core\category-product-list.html:21
+msgid "items for you"
+msgstr "sany haryt"
+
+#: .\templates\core\category-list.html:11
+#: .\templates\core\category-product-list.html:10
+#: .\templates\core\product-detail.html:17
+#: .\templates\core\sub-category-list.html:10 .\templates\partials\base.html:63
+#: .\templates\partials\base.html:178
+msgid "All Categories"
+msgstr "Kategoriýalar"
+
+#: .\templates\core\category-list.html:22
+msgid "Categories"
+msgstr "Kategoriýalar"
+
+#: .\templates\core\category-list.html:41 .\templates\core\vendor-list.html:55
+msgid "Products"
+msgstr "Harytlar"
+
+#: .\templates\core\category-list.html:78 .\templates\core\index.html:222
+#: .\templates\core\vendor-detail.html:214 .\templates\partials\base.html:286
+msgid "Category"
+msgstr "Kategoriýa"
+
+#: .\templates\core\category-product-list.html:21
+#: .\templates\core\search.html:20 .\templates\core\tag.html:27
+msgid "We found"
+msgstr "Tapyldy"
+
+#: .\templates\core\checkout.html:10 .\templates\core\checkout.html:17
+#: .\templates\partials\base.html:119 .\templates\partials\base.html:235
+msgid "Checkout"
+msgstr "Töleg"
+
+#: .\templates\core\checkout.html:28
+msgid "Billing Details"
+msgstr "Hasaplaşyk maglumatlary"
+
+#: .\templates\core\checkout.html:32
+msgid "First name *"
+msgstr "Adyňyz"
+
+#: .\templates\core\checkout.html:35
+msgid "mobile *"
+msgstr "telefon *"
+
+#: .\templates\core\checkout.html:40
+msgid "Address *"
+msgstr "Salgy"
+
+#: .\templates\core\checkout.html:51
+msgid "Your Order"
+msgstr "Sargytlarym"
+
+#: .\templates\core\checkout.html:56
+msgid "Go back to Cart"
+msgstr "Sebede geç"
+
+#: .\templates\core\checkout.html:85
+msgid "Payment"
+msgstr "Tölegi et"
+
+#: .\templates\core\checkout.html:93
+msgid "Cash on delivery"
+msgstr "Nagt töleg"
+
+#: .\templates\core\checkout.html:97
+msgid "Card on delivery"
+msgstr "Kart töleg"
+
+#: .\templates\core\checkout.html:111
+msgid "Make Payment"
+msgstr "Tölegi et"
+
+#: .\templates\core\contact.html:10 .\templates\partials\base.html:193
+msgid "Contact"
+msgstr "Aragatnaşyk"
+
+#: .\templates\core\contact.html:87
+msgid "Contact form"
+msgstr "Aragatnaşyk anketasy"
+
+#: .\templates\core\contact.html:88
+msgid "Drop Us a Line"
+msgstr "Bize hat ýaz"
+
+#: .\templates\core\contact.html:89
+msgid "Your email address will not be published. Required fields are marked *"
+msgstr "Doldurylmaly maglumatlar"
+
+#: .\templates\core\contact.html:118
+msgid "Send message"
+msgstr "Ugrat"
+
+#: .\templates\core\dashboard.html:23
+#: .\templates\userauths\profile-edit.html:23
+msgid "Profile"
+msgstr "Profil"
+
+#: .\templates\core\dashboard.html:26 .\templates\core\order-detail.html:23
+msgid "Dashboard"
+msgstr "Admin Panel"
+
+#: .\templates\core\dashboard.html:29
+msgid "Orders"
+msgstr "Sargytlar"
+
+#: .\templates\core\dashboard.html:35
+msgid "My Address"
+msgstr "Salgym"
+
+#: .\templates\core\dashboard.html:38
+msgid "Account details"
+msgstr "Maglumatlar"
+
+#: .\templates\core\dashboard.html:42 .\templates\core\order-detail.html:30
+#: .\templates\userauths\profile-edit.html:27
+msgid "Logout"
+msgstr "Çykmak"
+
+#: .\templates\core\dashboard.html:53
+msgid "My Profile"
+msgstr "Profilim"
+
+#: .\templates\core\dashboard.html:71
+msgid "Verified"
+msgstr "Tassyklanan"
+
+#: .\templates\core\dashboard.html:75
+msgid "Not verified"
+msgstr "Tassyklanmadyk"
+
+#: .\templates\core\dashboard.html:79
+msgid "Edit Profile"
+msgstr "Profili üýtgetmek"
+
+#: .\templates\core\dashboard.html:89
+msgid "Hello"
+msgstr "Salam"
+
+#: .\templates\core\dashboard.html:109 .\templates\core\order-detail.html:54
+msgid "Your Orders"
+msgstr "Sargytlarynyň"
+
+#: .\templates\core\dashboard.html:116
+msgid "Order"
+msgstr "Sargyt"
+
+#: .\templates\core\dashboard.html:117
+msgid "Date"
+msgstr "Sene"
+
+#: .\templates\core\dashboard.html:118
+msgid "Status"
+msgstr "Ýagdaýy"
+
+#: .\templates\core\dashboard.html:119
+msgid "Paid Status"
+msgstr "Töleg ýagdaýy"
+
+#: .\templates\core\dashboard.html:121
+msgid "Actions"
+msgstr "Hereket"
+
+#: .\templates\core\dashboard.html:138
+msgid "View"
+msgstr "Görkez"
+
+#: .\templates\core\dashboard.html:177
+msgid "Add Address"
+msgstr "Salgyny goşmak"
+
+#: .\templates\core\dashboard.html:187
+msgid "Save Address"
+msgstr "Salgyny ýatda sakla"
+
+#: .\templates\core\dashboard.html:199 .\templates\core\product-detail.html:265
+#: .\templates\core\product-detail.html:530
+#: .\templates\core\vendor-list.html:72 .\templates\partials\base.html:365
+msgid "Address"
+msgstr "Salgymyz"
+
+#: .\templates\core\dashboard.html:234 .\templates\core\order-detail.html:153
+msgid "Account Details"
+msgstr "Hasap maglumat"
+
+#: .\templates\core\dashboard.html:237
+msgid "Log in instead"
+msgstr "Hasaba gir"
+
+#: .\templates\core\dashboard.html:241 .\templates\core\order-detail.html:160
+msgid "First Name"
+msgstr "Adyňyz"
+
+#: .\templates\core\dashboard.html:245 .\templates\core\order-detail.html:164
+msgid "Last Name"
+msgstr "Familiýaňyz"
+
+#: .\templates\core\dashboard.html:249 .\templates\core\order-detail.html:168
+msgid "Display Name"
+msgstr "Adyňyz"
+
+#: .\templates\core\dashboard.html:253 .\templates\core\order-detail.html:172
+msgid "Email Address"
+msgstr "E-poçta"
+
+#: .\templates\core\dashboard.html:257 .\templates\core\order-detail.html:176
+msgid "Current Password"
+msgstr "Şuwagtky gizlin söz"
+
+#: .\templates\core\dashboard.html:261 .\templates\core\order-detail.html:180
+msgid "New Password"
+msgstr "Täze gizlin söz"
+
+#: .\templates\core\dashboard.html:265 .\templates\core\order-detail.html:184
+msgid "Confirm Password"
+msgstr "Gizlin sözi tassykla"
+
+#: .\templates\core\deals.html:45 .\templates\partials\base.html:163
+msgid "Deals"
+msgstr "Aksiýalar"
+
+#: .\templates\core\deals.html:54 .\templates\core\index.html:126
+msgid "Deals Of The Day"
+msgstr "Güniň aksiýalary"
+
+#: .\templates\core\index.html:26
+msgid "Popular Products"
+msgstr "Maslahat berilýän harytlar"
+
+#: .\templates\core\index.html:29
+msgid "All Products"
+msgstr "Ähli Harytlar"
+
+#: .\templates\core\index.html:128
+msgid "All Deals"
+msgstr "Ähli aksiýalar"
+
+#: .\templates\core\index.html:273
+msgid "New products"
+msgstr "Täze harytlar"
+
+#: .\templates\core\index.html:309
+msgid "Shop by Brand"
+msgstr "Dükanlar"
+
+#: .\templates\core\index.html:311
+msgid "All Brands"
+msgstr "Brendlar"
+
+#: .\templates\core\index.html:338
+msgid "Top Selling"
+msgstr "Köp Satylýan"
+
+#: .\templates\core\index.html:362
+msgid "Trending Products"
+msgstr "Meşhur harytlar"
+
+#: .\templates\core\index.html:386
+msgid "Recently added"
+msgstr "Täze goşulanlar"
+
+#: .\templates\core\index.html:410
+msgid "Top Rated"
+msgstr "Ýokary bahaly"
+
+#: .\templates\core\order-detail.html:10 .\templates\partials\base.html:131
+#: .\templates\userauths\profile-edit.html:10
+#: .\templates\userauths\sign-in.html:11 .\templates\userauths\sign-up.html:11
+msgid "My Account"
+msgstr "Hasabym"
+
+#: .\templates\core\order-detail.html:61
+msgid "Order INV"
+msgstr "Sargyt"
+
+#: .\templates\core\order-detail.html:62
+msgid "Image"
+msgstr "Surat"
 
 #: .\templates\core\order-detail.html:65
 msgid "Qty"
-msgstr ""
+msgstr "Mukdar"
 
 #: .\templates\core\order-detail.html:93
 msgid "Orders tracking"
-msgstr ""
+msgstr "Sargydy yzarlamak"
 
 #: .\templates\core\order-detail.html:101
 msgid "Order ID"
-msgstr ""
+msgstr "Sargut ID"
 
 #: .\templates\core\order-detail.html:105
 msgid "Billing email"
-msgstr ""
+msgstr "E-poçta"
 
 #: .\templates\core\order-detail.html:108
 msgid "Track"
-msgstr ""
+msgstr "Yzarlamak"
 
-#: .\templates\core\order-detail.html:156
+#: .\templates\core\order-detail.html:156 .\templates\userauths\sign-up.html:33
 msgid "Already have an account?"
-msgstr ""
+msgstr "Hasabym bar"
 
 #: .\templates\core\payment-completed.html:58
 msgid "Amount"
-msgstr ""
+msgstr "Mukdary"
 
-#: .\templates\core\payment-completed.html:76
+#: .\templates\core\payment-completed.html:77
 msgid "SubTotal"
-msgstr ""
+msgstr "Jemi"
 
-#: .\templates\core\payment-completed.html:84
+#: .\templates\core\payment-completed.html:81
 msgid "Grand Total"
-msgstr ""
+msgstr "Jemi"
 
-#: .\templates\core\payment-completed.html:94
+#: .\templates\core\payment-completed.html:91
 msgid "Invoice for"
-msgstr ""
+msgstr "Hasap Faktura"
 
-#: .\templates\core\payment-completed.html:96
-msgid "Invoice To"
-msgstr ""
-
-#: .\templates\core\payment-completed.html:100
+#: .\templates\core\payment-completed.html:97
 msgid "Total Amount"
-msgstr ""
+msgstr "Jemi mukdary"
 
-#: .\templates\core\payment-completed.html:102
-msgid "Taxes Included"
-msgstr ""
-
-#: .\templates\core\payment-completed.html:107
+#: .\templates\core\payment-completed.html:103
 msgid "Thanks for our shopping at"
-msgstr ""
+msgstr "Söwdaňyz üçin sag bolun"
 
-#: .\templates\core\payment-completed.html:112
+#: .\templates\core\payment-completed.html:108
 msgid "Print"
-msgstr ""
+msgstr "Çap et"
 
-#: .\templates\core\payment-completed.html:113
+#: .\templates\core\payment-completed.html:109
 msgid "Download"
-msgstr ""
+msgstr "Ýükle"
 
-#: .\templates\core\product-detail.html:17
-#: .\templates\core\product-list.html:45 .\templates\partials\base.html:301
-msgid "Shop"
-msgstr ""
-
-#: .\templates\core\product-detail.html:137
-msgid "Description"
-msgstr ""
-
-#: .\templates\core\product-detail.html:143
-#: .\templates\core\product-detail.html:525
-msgid "Vendor"
-msgstr ""
-
-#: .\templates\core\product-detail.html:146
-msgid "Reviews"
-msgstr ""
-
-#: .\templates\core\product-detail.html:258
+#: .\templates\core\product-detail.html:66
+#: .\templates\core\product-detail.html:260
 msgid "reviews"
-msgstr ""
+msgstr "syn"
 
-#: .\templates\core\product-detail.html:264
-#: .\templates\core\product-detail.html:542
+#: .\templates\core\product-detail.html:123
+msgid "Type"
+msgstr "Görnüşi"
+
+#: .\templates\core\product-detail.html:124
+msgid "Brand"
+msgstr "Brend"
+
+#: .\templates\core\product-detail.html:128
+msgid "Stock"
+msgstr "Stok"
+
+#: .\templates\core\product-detail.html:128
+msgid "Items In Stock"
+msgstr "Stokdaky harytlar"
+
+#: .\templates\core\product-detail.html:139
+msgid "Description"
+msgstr "Beýan"
+
+#: .\templates\core\product-detail.html:145
+#: .\templates\core\product-detail.html:515
+msgid "Vendor"
+msgstr "Dükan"
+
+#: .\templates\core\product-detail.html:148
+msgid "Reviews"
+msgstr "Synlar"
+
+#: .\templates\core\product-detail.html:266
+#: .\templates\core\product-detail.html:531
 msgid "Contact Seller"
-msgstr ""
+msgstr "Satyjy bilen habarlaş"
 
-#: .\templates\core\product-detail.html:268
-#: .\templates\core\product-detail.html:547
+#: .\templates\core\product-detail.html:270
+#: .\templates\core\product-detail.html:536
 msgid "Rating"
-msgstr ""
+msgstr "Reýting"
 
-#: .\templates\core\product-detail.html:272
-#: .\templates\core\product-detail.html:551
+#: .\templates\core\product-detail.html:274
+#: .\templates\core\product-detail.html:540
 msgid "Ship on time"
-msgstr ""
+msgstr "Gowşyrma wagty"
 
-#: .\templates\core\product-detail.html:276
-#: .\templates\core\product-detail.html:555
+#: .\templates\core\product-detail.html:278
+#: .\templates\core\product-detail.html:544
 msgid "Chat response"
-msgstr ""
+msgstr "Jogaby"
 
-#: .\templates\core\product-detail.html:287
+#: .\templates\core\product-detail.html:289
 msgid "Customer questions & answers"
-msgstr ""
+msgstr "Müşderiniň soraglary we jogaplary"
 
-#: .\templates\core\product-detail.html:316
+#: .\templates\core\product-detail.html:318
 msgid "Customer reviews"
-msgstr ""
+msgstr "Müşderi synlary"
 
-#: .\templates\core\product-detail.html:325
+#: .\templates\core\product-detail.html:327
 msgid "out of"
-msgstr ""
+msgstr "dan"
 
-#: .\templates\core\product-detail.html:408
+#: .\templates\core\product-detail.html:357
+msgid "Add a review"
+msgstr "Syn goşmak"
+
+#: .\templates\core\product-detail.html:395
+msgid "Submit Review"
+msgstr "Syn ugratmak"
+
+#: .\templates\core\product-detail.html:410
 msgid "Related products"
-msgstr ""
+msgstr "Meňzeş harytlar"
+
+#: .\templates\core\product-detail.html:481
+msgid "Delivery"
+msgstr "Eltip bermek"
+
+#: .\templates\core\product-detail.html:489
+msgid "Verified Address"
+msgstr "Tassyklanan adres"
 
 #: .\templates\core\product-detail.html:491
-msgid "Delivery"
-msgstr ""
-
-#: .\templates\core\product-detail.html:499
-msgid "Verified Address"
-msgstr ""
-
-#: .\templates\core\product-detail.html:501
 msgid "Unverified Address"
-msgstr ""
+msgstr "Tassyklanmadyk adres"
 
-#: .\templates\core\product-detail.html:504
+#: .\templates\core\product-detail.html:494
 msgid "Change"
-msgstr ""
+msgstr "Üýtget"
 
-#: .\templates\core\product-detail.html:508
+#: .\templates\core\product-detail.html:498
 msgid "Return & Warranty"
-msgstr ""
+msgstr "Kepillik"
 
-#: .\templates\core\product-detail.html:512
+#: .\templates\core\product-detail.html:502
 msgid "Authentic"
-msgstr ""
+msgstr "Ynamdar"
 
-#: .\templates\core\product-detail.html:516
-msgid " Days Return"
-msgstr ""
+#: .\templates\core\product-detail.html:506
+msgid "Days Return"
+msgstr "Gaýtarmak"
 
-#: .\templates\core\product-detail.html:520
+#: .\templates\core\product-detail.html:510
 msgid "Months Warranty"
-msgstr ""
+msgstr "Aý kepil"
 
-#: .\templates\core\product-detail.html:562
+#: .\templates\core\product-detail.html:551
 msgid "Register now"
-msgstr ""
+msgstr "Agza bol"
+
+#: .\templates\core\product-list.html:54
+msgid "Filters"
+msgstr "Filter"
 
 #: .\templates\core\product-list.html:62
 msgid "By Categories"
-msgstr ""
+msgstr "Kategoriýa"
 
 #: .\templates\core\product-list.html:78
 msgid "By Vendors"
-msgstr ""
+msgstr "Dükan"
 
 #: .\templates\core\product-list.html:93
+msgid "By Type"
+msgstr "Görnüş"
+
+#: .\templates\core\product-list.html:108
 msgid "Popular Tags"
-msgstr ""
+msgstr "Meşhur Taglar"
 
-#: .\templates\core\product-list.html:121
+#: .\templates\core\product-list.html:122
+msgid "By Price"
+msgstr "Baha"
+
+#: .\templates\core\product-list.html:132
+msgid "Current Price"
+msgstr "Bahasy"
+
+#: .\templates\core\product-list.html:136
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
-#: .\templates\core\search.html:14
-msgid "No Searched Item"
-msgstr ""
+#: .\templates\core\product-list.html:148
+msgid "items"
+msgstr "harytlar"
 
-#: .\templates\core\search.html:32 .\templates\core\tag.html:27
+#: .\templates\core\search.html:10
+msgid "Search for items"
+msgstr "Haryt Gözle"
+
+#: .\templates\core\search.html:20 .\templates\core\tag.html:27
 msgid "item for you!"
-msgstr ""
+msgstr "haryt tapyldy"
 
-#: .\templates\core\tag.html:103
+#: .\templates\core\tag.html:98
 msgid "By"
-msgstr ""
+msgstr "Tarapyndan"
 
-#: .\templates\core\vendor-detail.html:22 .\templates\core\vendor-list.html:101
+#: .\templates\core\vendor-detail.html:22 .\templates\core\vendor-list.html:61
 msgid "Since"
-msgstr ""
+msgstr "dan"
 
-#: .\templates\core\vendor-detail.html:47
+#: .\templates\core\vendor-detail.html:46
 msgid "Follow Us"
-msgstr ""
+msgstr "Yzarla"
 
-#: .\templates\core\vendor-detail.html:80
+#: .\templates\core\vendor-detail.html:79
 msgid "items for you!"
-msgstr ""
+msgstr "haryt tapyldy"
 
 #: .\templates\core\vendor-list.html:11 .\templates\core\vendor-list.html:18
 msgid "Vendors List"
-msgstr ""
+msgstr "Dükanlar Sanawy"
 
-#: .\templates\core\vendor-list.html:95
-msgid "Products"
-msgstr ""
+#: .\templates\core\vendor-list.html:36 .\templates\partials\base.html:172
+#: .\templates\partials\base.html:301
+msgid "Vendors"
+msgstr "Dükanlar"
 
-#: .\templates\core\vendor-list.html:118
+#: .\templates\core\vendor-list.html:73 .\templates\partials\base.html:371
+msgid "Call Us"
+msgstr "Jaňlaşmak"
+
+#: .\templates\core\vendor-list.html:78
 msgid "Visit Store"
-msgstr ""
-
-#: .\templates\core\wishlist.html:11 .\templates\partials\base.html:204
-msgid "Wishlist"
-msgstr ""
+msgstr "Dükana geç"
 
 #: .\templates\core\wishlist.html:19
 msgid "Your Wishlist"
-msgstr ""
+msgstr "Halanlarym"
 
 #: .\templates\core\wishlist.html:20
 msgid "products in this list"
-msgstr ""
+msgstr "harytlar"
 
-#: .\templates\core\wishlist.html:32
-msgid "Stock Status"
-msgstr ""
-
-#: .\templates\core\wishlist.html:33
-msgid "Action"
-msgstr ""
-
-#: .\templates\core\wishlist.html:56
-msgid "In Stock"
-msgstr ""
-
-#: .\templates\core\wishlist.html:56
-msgid "Out of Stock"
-msgstr ""
-
-#: .\templates\core\wishlist.html:67
-msgid "Add to cart"
-msgstr ""
-
-#: .\templates\core\wishlist.html:75
-msgid "Nothing in wishlist yet..."
-msgstr ""
-
-#: .\templates\partials\base.html:167
+#: .\templates\partials\base.html:68
 msgid "Search for items..."
-msgstr ""
+msgstr "Haryt gözle..."
 
-#: .\templates\partials\base.html:217 .\templates\partials\base.html:418
+#: .\templates\partials\base.html:118 .\templates\partials\base.html:234
 msgid "View cart"
-msgstr ""
+msgstr "Sebet"
 
-#: .\templates\partials\base.html:227
+#: .\templates\partials\base.html:128
 msgid "Account"
-msgstr ""
+msgstr "Hasap"
 
-#: .\templates\partials\base.html:231
-msgid "Admin Dashboard"
-msgstr ""
-
-#: .\templates\partials\base.html:234
+#: .\templates\partials\base.html:132
 msgid "My Wishlist"
-msgstr ""
+msgstr "Halanlarym"
 
-#: .\templates\partials\base.html:235
+#: .\templates\partials\base.html:133
 msgid "Setting"
-msgstr ""
+msgstr "Sazlamalar"
 
-#: .\templates\partials\base.html:237
+#: .\templates\partials\base.html:135
 msgid "Sign out"
-msgstr ""
+msgstr "Çykmak"
 
-#: .\templates\partials\base.html:259 .\templates\partials\base.html:295
-msgid "All Categories"
-msgstr ""
+#: .\templates\partials\base.html:137
+msgid "Sign In"
+msgstr "Girmek"
 
-#: .\templates\partials\base.html:282
-msgid "Акции"
-msgstr ""
-
-#: .\templates\partials\base.html:305 .\templates\partials\base.html:478
-msgid "Vendors"
-msgstr ""
-
-#: .\templates\partials\base.html:388
+#: .\templates\partials\base.html:204
 msgid "Support Center"
-msgstr ""
+msgstr "Kömek"
 
-#: .\templates\partials\base.html:458
+#: .\templates\partials\base.html:274
 msgid "Search for items…"
-msgstr ""
+msgstr "Haryt gözle..."
 
-#: .\templates\partials\base.html:514
+#: .\templates\partials\base.html:304
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
-#: .\templates\partials\base.html:530
+#: .\templates\partials\base.html:320
 msgid "Log In / Sign Up"
-msgstr ""
+msgstr "Girmek / Çykmak"
 
-#: .\templates\partials\base.html:544 .\templates\partials\base.html:655
+#: .\templates\partials\base.html:334 .\templates\partials\base.html:358
 msgid "All rights reserved"
-msgstr ""
+msgstr "Ähli hukuklary goralan"
 
-#: .\templates\partials\base.html:668
-msgid "Call Us"
-msgstr ""
-
-#: .\templates\partials\base.html:683
+#: .\templates\partials\base.html:386
 msgid "Hours"
-msgstr ""
+msgstr "Sagat"
+
+#: .\templates\userauths\profile-edit.html:10
+#: .\templates\userauths\sign-in.html:11 .\templates\userauths\sign-up.html:11
+msgid "Pages"
+msgstr "Sahypalar"
+
+#: .\templates\userauths\profile-edit.html:37
+msgid "Update Profile"
+msgstr "Profili üýtgetmek"
+
+#: .\templates\userauths\profile-edit.html:68
+msgid "Save Changes"
+msgstr "Ýatda sakla"
+
+#: .\templates\userauths\sign-in.html:27 .\templates\userauths\sign-up.html:33
+msgid "Login"
+msgstr "Hasaba gir"
+
+#: .\templates\userauths\sign-in.html:28
+msgid "Don't have an account?"
+msgstr "Hasabym ýok"
+
+#: .\templates\userauths\sign-in.html:28
+msgid "Create here"
+msgstr "Täze aç"
+
+#: .\templates\userauths\sign-in.html:43
+msgid "Remember me"
+msgstr "Ýatda sakla"
+
+#: .\templates\userauths\sign-in.html:46
+msgid "Forgot password?"
+msgstr "Şuwagtky gizlin söz"
+
+#: .\templates\userauths\sign-in.html:49
+msgid "Log in"
+msgstr "Hasaba gir"
+
+#: .\templates\userauths\sign-up.html:32
+msgid "Create an Account"
+msgstr "Hasabym aç"
+
+#: .\templates\userauths\sign-up.html:51
+msgid "Submit"
+msgstr "Agza bol"
+
+#~ msgid "All Vendors"
+#~ msgstr "ähli dükanlar"
+
+#~ msgid "Admin Dashboard"
+#~ msgstr "Admin Panel"
 
 #~ msgid "poisk"
 #~ msgstr "gozle"

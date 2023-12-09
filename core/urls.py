@@ -15,6 +15,12 @@ urlpatterns = [
     path("delas/", deal_product_list_view, name="deal-product-list"),
     path("product/<pid>/", product_detail_view, name="product-detail"),
 
+    #Brands
+    path("brand/", brand_list_view, name="brand-list"),
+    path("brand/<bid>/", brand_product_list__view, name="brand-product-list"),
+
+
+
     # Category
     path("category/", category_list_view, name="category-list"),
     path("sub_category/<cid>/", sub_category_list_view, name="sub-category-list"),
